@@ -1,0 +1,29 @@
+\newcount\cislo
+\cislo=-42
+\newif\ifcislojerozumne
+
+% implementace podmínky je/není větší než -100 a zároveň menší rovno 100
+
+\ifnum \cislo > -100
+	\ifnum \cislo < 100
+		\cislojerozumnetrue
+	\else
+		\ifnum \cislo = 100
+			\cislojerozumnetrue
+		\fi
+	\fi
+\fi
+
+% implementace podmínky je/není rovno 42 nebo rovno -42
+
+% \ifnum \cislo = 42
+% 	\cislojerozumnetrue
+% \else
+% 	\ifnum \cislo = -42
+% 		\cislojerozumnetrue
+% 	\fi
+% \fi
+
+Cislo \the\cislo{} \ifcislojerozumne je \else neni \fi vetsi nez
+-100 a zaroven mensi rovno 100.
+\bye

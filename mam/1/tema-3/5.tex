@@ -1,0 +1,11 @@
+\catcode`,=13%
+\endlinechar=`*%
+\catcode`*=13
+\def,{&}%
+\def*{\cr\noalign{\hrule}}%
+\halign{\vrule\strut{} # \vrule&&{} # \vrule\cr\noalign{\hrule}%
+	\input{tabulka.csv}%
+}%
+\bye%
+
+

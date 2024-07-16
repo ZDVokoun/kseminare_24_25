@@ -1,0 +1,28 @@
+\newcount\counter
+\counter=1
+
+\def\while#1#2{
+	\loop
+	#2
+	\ifnum #1
+	\repeat
+}
+
+\def\for#1#2#3{
+	\counter=#1
+	\while{\counter<#2}{
+		#3
+		\advance \counter by 1
+	}
+}
+
+\while{\counter<11}{
+	Number: \the\counter
+	\advance\counter by 1
+}
+
+\for{1}{11}{
+	Number: \the\counter
+}
+
+\bye

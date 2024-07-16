@@ -1,0 +1,165 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1}
+\problem{2} 
+
+\begin{document}
+
+\section{Problém 1}
+
+Jako první zmíním typické příklady zobrazení, které nemůžou být lineární. Nejjednodušší příklad nelineárního zobrazení je posunutí. U ní lze její nelinearita dokázat jednodušše. Otočení ocasu je taky nelineární, protože by muselo nutně dojít také k posunutí. Nelinearitu posunutí si dokážeme.
+
+Nechť je posunutí zobrazení $f(\mathbf{x}) = \mathbf{x} + \mathbf{c}$, kde $\mathbf{c} \neq \mathbf{0}$ je konstanta. Pro lineární zobrazení platí $f(\mathbf{x} + \mathbf{y}) = f(\mathbf{x}) + f(\mathbf{y})$, proto za předpokladu, že posunutí je lineární zobrazení, musí platit $\mathbf{x} + \mathbf{y} + \mathbf{c} = \mathbf{x} + \mathbf{y} + 2 \mathbf{c}$. To však nemůže platit, čímž jsme dokázali, že se nejedná o lineární zobrazení.
+
+Dále ukážu zobrazení, které si můžeme představit jako úpravu, když přehneme průhlednou fólii s obrázkem podél $x$-ové osy, tedy zobrazení, které všechny vektory se zápornou $y$-souřadnicí překlopí přes $x$-ovou osu. Toto zobrazení můžeme vyjádřit jako $f(\mathbf{x}) = (\mathbf{x}_1, |\mathbf{x}_2|)$. A protože absolutní hodnota není lineární funkce, nemůže tato funkce být lineární zobrazení. Dalšími příklady můžou být nějaké kvadratické a jiné nelineární funkce.
+
+Zbytek zobrazení zmíněných zadání splňují podmínky pro lineární zobrazení, a to $f(\mathbf{x} + \mathbf{y}) = f(\mathbf{x}) + f(\mathbf{y})$ a $f(a \mathbf{x}) = a f(\mathbf{x})$. Tyto vlastnosti říkají, že počátek zůstane vždy na stejném místě a že při přičtení stejného vektoru se vektor změní stejně.
+
+\section{Úloha 2}
+
+Výsledky jsou vypsané postupně z leva doprava po řádcích.
+
+\begin{equation}
+	\begin{pmatrix}
+		24 & -60 \\
+		-4 & -90 \\
+	\end{pmatrix}
+\end{equation}
+\begin{equation}
+	\begin{pmatrix}
+		1 & 0 & 0 & 0 & 0 \\
+		2 & 1 & 0 & 0 & 0 \\
+		3 & 2 & 1 & 0 & 0 \\
+		4 & 3 & 2 & 1 & 0 \\
+		5 & 4 & 3 & 2 & 1 \\
+	\end{pmatrix}
+\end{equation}
+\begin{equation}
+	\begin{pmatrix}
+		18 & -13 \\
+		39 & 16  \\
+	\end{pmatrix}
+\end{equation}
+\begin{equation}
+	\begin{pmatrix}
+		3  & 1  & 9  & 0 & 4  \\
+		8  & 6  & 19 & 0 & 14 \\
+		13 & 11 & 29 & 0 & 24 \\
+		18 & 16 & 39 & 0 & 34 \\
+		23 & 21 & 49 & 0 & 44 \\
+	\end{pmatrix}
+\end{equation}
+\begin{equation}
+	\begin{pmatrix}
+		21 & 12 \\
+		31 & 12 \\
+		40 & 57 \\
+	\end{pmatrix}
+\end{equation}
+\begin{equation}
+	\begin{pmatrix}
+		6  & 7  & 8  & 9  & 10 \\
+		42 & 44 & 46 & 48 & 50 \\
+		1  & 2  & 3  & 4  & 5  \\
+		11 & 12 & 13 & 14 & 15 \\
+		11 & 12 & 13 & 14 & 15 \\
+	\end{pmatrix}
+\end{equation}
+
+\section{Úloha 3}
+
+Pro vyřešení této rovnice nám stačí obě rovnice vynásobit takovou inverzní maticí, abychom pak dostali explicitní vzorec pro matici $\mathbf{A}$. To si můžeme dovolit, jelikož tyto matice nejsou singulární.
+
+\[
+	\begin{pmatrix}
+		1 & 2 \\
+		3 & 4 \\
+	\end{pmatrix} \cdot \mathbf{A} = \begin{pmatrix}
+		5  & 13 \\
+		19 & 25 \\
+	\end{pmatrix}
+\]
+
+\[
+	\begin{pmatrix}
+		1 & 2 \\
+		3 & 4 \\
+	\end{pmatrix}^{-1} \cdot
+	\begin{pmatrix}
+		1 & 2 \\
+		3 & 4 \\
+	\end{pmatrix} \cdot \mathbf{A} = \begin{pmatrix}
+		1 & 2 \\
+		3 & 4 \\
+	\end{pmatrix}^{-1} \cdot
+	\begin{pmatrix}
+		5  & 13 \\
+		19 & 25 \\
+	\end{pmatrix}
+\]
+\[
+	\mathbf{A} = \begin{pmatrix}
+		1 & 2 \\
+		3 & 4 \\
+	\end{pmatrix}^{-1} \cdot
+	\begin{pmatrix}
+		5  & 13 \\
+		19 & 25 \\
+	\end{pmatrix} =
+	\begin{pmatrix}
+		9  & -1 \\
+		-2 & 7  \\
+	\end{pmatrix}
+\]
+
+A to je tedy řešení.
+
+\section{Úloha 4}
+
+Řešením je $\mathbf{A} \in \mathbb{R}^{m \times k}$, $\mathbf{B} \in \mathbb{R}^{k \times l}$, $\mathbf{C} \in \mathbb{R}^{m \times l}$, $\mathbf{D} \in \mathbb{R}^{n \times l}$, $\mathbf{E} \in \mathbb{R}^{n \times m}$, $\mathbf{F} \in \mathbb{R}^{n \times l}$.
+
+\section{Úloha 5}
+
+Když si tuto úlohu vyjádříme jako rovnici:
+
+\[
+	\mathbf{X} \cdot
+	\begin{pmatrix}
+		-7 & 9  \\
+		4  & -5 \\
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		5  & -4 \\
+		-3 & 2  \\
+	\end{pmatrix}
+\]
+
+Tak tuto rovnici můžeme upravit na:
+
+\[
+	\mathbf{X}
+	=
+	\begin{pmatrix}
+		5  & -4 \\
+		-3 & 2  \\
+	\end{pmatrix} \cdot
+	\begin{pmatrix}
+		-7 & 9  \\
+		4  & -5 \\
+	\end{pmatrix}^{-1}
+	=
+	\begin{pmatrix}
+		9  & 17  \\
+		-7 & -13 \\
+	\end{pmatrix}
+\]
+
+\end{document}

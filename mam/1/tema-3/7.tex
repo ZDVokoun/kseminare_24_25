@@ -1,0 +1,42 @@
+% Implementation of Extended Euclidean algorithm
+
+\newcount\s
+\newcount\olds
+\newcount\r
+\newcount\oldr
+\newcount\quotient
+\newcount\tmpr
+\newcount\tmps
+\newcount\tmp
+\newcount\bezoutt
+\def\extendedgcd#1#2{
+	\s=0 \olds=1 \r=#2 \oldr=#1
+	\loop
+	\ifnum\r>0
+		\quotient=\oldr \divide \quotient by \r
+		%
+		\tmpr=\r \tmp=\quotient \multiply \tmp by \r
+		\r=\oldr \advance\r by-\tmp \oldr=\tmpr
+		%
+		\tmps=\s \tmp=\quotient \multiply \tmp by \s
+		\s=\olds \advance\s by-\tmp \olds=\tmps
+	\fi
+	\ifnum\r>0 \repeat
+	\ifnum#2>0
+		\tmp=\olds \multiply \tmp by #1
+		\bezoutt=\oldr \advance\bezoutt by-\tmp
+		\divide\bezoutt by#2
+	\else
+		\bezoutt=0
+	\fi
+	Input: $(a, b) = (#1,#2)$
+
+	B\'ezout coefficients: $(x, y) = (\the\olds, \the\bezoutt)$
+
+	Greatest common divisor: \the\oldr
+
+}
+
+\extendedgcd{126}{237}
+
+\bye

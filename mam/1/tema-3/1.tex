@@ -1,0 +1,19 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1}
+\problem{3} 
+
+\begin{document}
+
+\section{Úloha 1}
+
+Při předefinování makra s použitím původního významu nemůžeme vždy použít \verb|\edef|, protože při předefinování někdy nechceme, abychom expandovali dané makro rovnou při předefinování, např. tehdy, když makro je definováno pomocí maker, které ale nechceme ještě expandovat, protože závisí na nějakém registru, jehož hodnotu budeme ještě upravovat. Také bychom tím mohli zbytečně zahlcovat paměť.
+
+\end{document}
