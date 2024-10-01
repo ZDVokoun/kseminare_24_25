@@ -1,0 +1,41 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1p}
+\problem{4} 
+
+\begin{document}
+
+Jako první si musíme uvědomit, že pokud v určitém $n$-písmenném slově je výskyt každého z podslov \textit{UO} a \textit{UF} sudý nebo naopak lichý, pak jich dohromady bude vždy sudý počet a naopak. Z toho je tedy zřejmé, že veškerá slova, kde je celkový výskyt těchto slov lichý, nemohou být započítána. Zároveň je zřejmé, že tato podslova se nemohou v žádném z podslov překrývat.
+
+Teď tedy budeme uvažovat všechna slova, kde celkový počet podslov \textit{UF} a \textit{UO} je nenulové $2m$ a kde se tato podslova nachází na stejných místech, jen se mění jejich poměr a jejich pořadí. Tehdy můžeme zanedbat, jaké písmena se nachází mimo tato podslova, protože pořadí a poměr těchto podslov nebude ovlivňovat zbylá písmena. Proto jediné, co stačí, je spočítat počet permutací těchto podslov pro každý jejich poměr a pak z nich zjistit počet slov s daným rozmístění podslov, kde každý z těchto podslov se vyskytuje suděkrát nebo lišekrát.
+
+Počet slov s daným rozmístěním podslov, kde každý z podslov se vyskytuje suděkrát, je:
+
+\[
+	\sum_{i = 0}^{m} \frac{(2m - 2i + 2i)!}{2i! \cdot (2m - 2i)!} = \sum_{i = 0}^{m} \binom{2m}{2i}
+\]
+
+A počet podslov, kde se vyskytují lišekrát, je:
+
+\[
+	\sum_{i = 0}^{m - 1} \frac{(2m - (2i + 1) + 2i + 1)!}{(2i + 1)! \cdot (2m - (2i + 1))!} = \sum_{i = 0}^{m - 1} \binom{2m}{2i + 1}
+\]
+
+Když na tyto sumy budeme opakovaně aplikovat rekurentní vztah $\binom{n - 1}{k - 1} + \binom{n - 1}{k} = \binom{n}{k}$, zjistíme, že obě tyto sumy se rovnají výrazu:
+
+\[
+	\sum_{i = 0}^{2m - 1} \binom{2m - 1}{i}
+\]
+
+To znamená, že když si zvolíme taková slova, kde se podslova \textit{UF} a \textit{UO} nachází na stejných místech a mění se jen pořadí těchto podslov a jejich poměr, pak z nich je počet slov, kde se každý z podslov vyskytuje suděkrát, stejný jako počet slov, kde se každý z podslov vyskytuje lišekrát. Což ale zároveň znamená, že toto znamená pro všechna rozmístění podslov, tudíž pro všechna slova, kde je výskyt těchto podslov nenulový, je počet slov, kde se každý z podslov vyskytuje suděkrát, stejný jako počet slov, kde se každý z podslov vyskytuje lišekrát.
+
+Teď když toto víme, musíme uvážit i taková slova, kde se tato podslova nenachází ani jednou. Těchto slov určitě existuje nenulové množství a řadí se mezi slova, kde se každý z podslov vyskytuje suděkrát. A to s předchozím poznatkem znamená, že počet slov, kde se každý z podslov vyskytuje suděkrát, je ostře větší než počet slov, kde se každý z podslov vyskytuje lišekrát, což jsme chtěli dokázat. Q. E. D.
+
+\end{document}

@@ -1,0 +1,19 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1p}
+\problem{2} 
+
+\begin{document}
+
+Víme, že čísel od 2 do 4321 je celkem 4320, což je číslo dělitelné čtyřmi. Zároveň víme, že výsledek tohoto výrazu musí teda být přirozené číslo. Tím pádem, když budeme schopni doplnit plusy a minusy tak, aby se výraz od 2 do 4321 vynuloval, dostaneme nejmenší možné kladné číslo, které můžeme.
+
+To uděláme následovně -- před 2 a 4321 dáme +, před 3 a 4320 dáme -, před 4 a 4319 dáme + atd. Součet každé z těchto dvojic bude 4323 a díky tomu, že počet těchto čísel je dělitelný čtyřmi, můžeme každou přičítanou dvojici spárovat s odečítanou dvojicí. Po tomto budeme mít doplněné všechny operátory a vyjde nám, že hodnota výrazu je 1, což je nejmenší možný kladný výraz. Q. E. D.
+
+\end{document}

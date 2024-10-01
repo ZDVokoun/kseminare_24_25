@@ -1,0 +1,50 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1}
+\problem{1} 
+
+\begin{document}
+
+Víme, že Newtonův gravitační zákon říká, že na hmotný bod o hmotnosti $m$ při povrchu Europy působí síla:
+
+\[
+	F\_{g} = G \cdot \frac{m M\_{E}}{R\_{E}^2}
+\]
+
+Z čehož platí, že:
+
+\[
+	g\_{E} = G \cdot \frac{M\_{E}}{R\_{E}^2}
+\]
+
+Protože chceme vědět, jaká bude hmotnost Europy, když bude homogenní koulí z kapalné vody nebo ledu, bude obecně platit vzorec:
+
+\[
+	M\_{E} = \frac{4}{3} \pi R\_{E}^3 \cdot \rho
+\]
+
+Po dosazení do vztahu výše dostaneme:
+
+\[
+	g\_{E} = \rho \cdot G \frac{\frac{4}{3} \pi R\_{E}^3}{R\_{E}^2} = \rho \cdot \frac{4}{3} G \pi R\_{E}
+\]
+
+Dosadíme tam tedy postupně hodnoty z matematických a fyzikálních tabulek:
+
+\[
+	g\_{E, voda} \doteq \rho\_{voda} \cdot 4,3891 \cdot "10^{-3} m \cdot s^{-2}" \doteq "0,43803 m \cdot s^{-2}"
+\]
+\[
+	g\_{E, led} \doteq \rho\_{voda} \cdot 4,3891 \cdot "10^{-3} m \cdot s^{-2}" \doteq "0,4038 m \cdot s^{-2}"
+\]
+
+Když to porovnáme se zrychlením na Europě $"1.314 m \cdot s^2"$, zjistíme, že oboje zrychlení je skoro třikrát menší než skutečné zrychlení. U ledu se zrychlení logicky zmenšilo, protože hustota ledu je menší než hustota kapalného vzduchu.
+
+\end{document}

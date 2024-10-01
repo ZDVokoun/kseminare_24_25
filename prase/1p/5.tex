@@ -1,0 +1,30 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1p}
+\problem{5} 
+
+\begin{document}
+
+Jako první, co uděláme, je to, že spočítáme odděleně nejmenší počet Marťanů s hlavní barvou řádku a nejmenší počet Marťanů s hlavní barvou sloupce. To nám stačí jednoduše vyjít z podmínek ze zadání; nejmenší počet Marťanů s hlavní barvou řádku je $(2n + 1) \cdot (m + 1)$, protože v každém řádku je alespoň nadpoloviční většina takových Marťanů, a s hlavní barvou sloupce $(2m + 1) \cdot (n + 1)$.
+
+Teď si musíme uvědomit následující věc: když v součtu Marťanů s nějakou hlavní barvou bude počítán dvakrát, pak tento Marťan musel nutně mít hlavní barvu řádku i sloupce. Víme, že celkový počet Marťanů je $(2m + 1) \cdot (2n + 1)$, což je nutně taky horní odhad Marťanů, kteří mají alespoň jednu hlavní barvu. Proto, když uděláme rozdíl součtu Marťanů s nějakou hlavní barvou a horního odhadu Marťanů s nějakou barvou, dostaneme nejmenší počet Marťanů s hlavní barvou řádku i sloupce. Tento rozdíl nám vyjde:
+
+\[
+	(2n + 1)(m + 1) + (2m + 1)(n + 1) - (2m + 1)(2n + 1)\]
+\[
+	= 2mn + 2n + m + 1 + 2mn + 2m + n + 1 - (4mn + 2m + 2n + 1)
+\]
+\[
+	= m + n + 1
+\]
+
+Tento výsledek je přesně ten, ke kterému jsme měli dojít. Tím pádem tvrzení ze zadání je dokázáno. Q.~E.~D.
+
+\end{document}

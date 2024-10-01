@@ -1,0 +1,66 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1p}
+\problem{7} 
+
+\begin{document}
+
+Jako první upravíme polynom na levé straně rovnice na součin:
+
+\[
+	x^3 + x^2 + x + 1 = p^n
+\]
+\[
+	(x^2 + 1)(x + 1) = p^n
+\]
+
+Díky podmínkám ze zadání víme, že na pravé straně rovnice je přirozené číslo větší nebo rovno dvěma. Tím pádem $x$ nemůže být ani záporné číslo, ani 0, proto $x$ je nutně přirozené číslo. Díky tomu víme, že jak výraz $x^2 + 1$, tak výraz $x + 1$, je větší než jedna, proto oba tyto výrazy jsou dělitelné prvočíslem $p$. To můžeme formulovat jako soustavu kongruencí:
+
+\[
+	x^2 + 1 \equiv 0 \pmod{p}
+\]
+\[
+	x + 1 \equiv 0 \pmod{p}
+\]
+
+Z této soustavy víme, že platí:
+
+\[
+	x^2 + 1 \equiv x + 1 \equiv 0 \pmod{p}
+\]
+\[
+	x^2 \equiv x \pmod{p}
+\]
+\[
+	x (x - 1) \equiv 0 \pmod{p}
+\]
+
+Z toho máme dvě řešení $x \equiv 0 \pmod{p}$ a $x \equiv 1 \pmod{p}$. Po dosazení je však zřejmé, že může platit jen řešení $x \equiv 1 \pmod{p}$, a to tehdy, když $p = 2$. Z toho plyne, že $p = 2$ a že číslo $x$ je liché číslo.
+
+Z toho tedy víme, že výrazy $x^2 + 1$ a $x + 1$ musí být mocniny dvojky větší než jedna. Protože víme, že $x$ je liché číslo, provedeme substituci $x = 2y + 1$ a dosadíme ho do výrazu $x^2 + 1$:
+
+\[
+	x^2 + 1 = 2^a
+\]
+\[
+	(2y + 1)^2 + 1 = 2^a
+\]
+\[
+	4y^2 + 4y + 2 = 2^a
+\]
+\[
+	2y^2 + 2y + 1 = 2^{a - 1}
+\]
+
+Jak můžeme vidět, ve výsledné rovnici máme na levé straně liché číslo. A protože jediná lichá celočíselná mocnina dvojky je 1, musí $y = 0$ a tedy $x = 1$.
+
+Tohle je už dost informací, abychom získali jediné možné řešení, které je $x = 1$, $p = 2$ a $n = 2$. Protože jsme všechna ostatní řešení vyřadili, důkaz je u konce. Q.~E.~D.
+
+\end{document}

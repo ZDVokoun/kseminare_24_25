@@ -14,6 +14,6 @@
 
 \section{Úloha 1}
 
-Při předefinování makra s použitím původního významu nemůžeme vždy použít \verb|\edef|, protože při předefinování někdy nechceme, abychom expandovali dané makro rovnou při předefinování, např. tehdy, když makro je definováno pomocí maker, které ale nechceme ještě expandovat, protože závisí na nějakém registru, jehož hodnotu budeme ještě upravovat. Také bychom tím mohli zbytečně zahlcovat paměť.
+Při předefinování makra s použitím původního významu nemůžeme vždy použít \verb|\edef|, protože pokud makro závisí na nějakém registru, kde se ještě bude hodnota měnit, došlo by při předefinování k expanzi daného makra a tím pádem k jeho spuštění, kdy ještě nechceme, aby se spouštěl.
 
 \end{document}

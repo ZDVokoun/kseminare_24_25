@@ -1,0 +1,69 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1}
+\problem{4} 
+
+\begin{document}
+
+Víme, že pro vzdálenost předmětovou $a$, obrazovou $a'$ a ohniskovou $f$ platí vztah:
+
+\[
+	\frac{1}{a} + \frac{1}{a'} = \frac{1}{f}
+\]
+
+Protože $D = a + a'$ a obrazová vzdálenost $a'$ je vzdálenost čočky od stropu, určíme pozici čočky následovně:
+
+\[
+	\frac{1}{D - a'} + \frac{1}{a'} = \frac{1}{f}
+\]
+\[
+	f \cdot \frac{a' + D - a'}{a' (D - a')} = 1
+\]
+\[
+	fD = - a'^2 + Da'
+\]
+\[
+	a'^2 - Da' + fD = 0
+\]
+
+Řešení této rovnice jsou:
+
+\[
+	a' = \frac{D \pm \sqrt{D (D - 4f)}}{2}
+\]
+
+U volného pádu víme, že vzdálenost předmětu od stropu při volném pádu v čase $t$ bude:
+
+\[
+	D_p = D + \frac{1}{2} g t^2
+\]
+
+Při dosazení $D_p$ místo $D$ v rovnici pro $a'$ získáme:
+
+\[
+	a'_p = \frac{D + \frac{1}{2} gt^2 \pm \sqrt{\left(D + \frac{1}{2} g t^2\right) \left( D + \frac{1}{2} g t^2  - 4f\right)}}{2}
+\]
+
+A poněvadž když ji necháme padat hodně dlouho tak bude platit, že $\frac{1}{2} g t^2 \gg D$ a $\frac{1}{2} g t^2 \gg f$, tak se výraz výše zjednodušší na:
+
+\[
+	a'_p = \frac{\frac{1}{2} gt^2 \pm \sqrt{\left(\frac{1}{2} g t^2\right) \left(\frac{1}{2} g t^2\right)}}{2}
+\]
+\[
+	a'_p = \frac{\frac{1}{2} gt^2 \pm \frac{1}{2} g t^2}{2}
+\]
+\[
+	a'_p \in \left\{0, \frac{1}{2} g t^2\right\}
+\]
+
+Tudíž postupem času se bude čočka přibližovat buď ke stropu, nebo k čočce.
+
+
+\end{document}
