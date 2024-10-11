@@ -1,0 +1,36 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1}
+\problem{B} 
+
+\begin{document}
+
+Jako první si musíme všimnout, že v $k$-tém řádku můžeme vyjádřit součet prvních $k - 1$ čísel jako součet dvou posloupností od 1 po $k - 1$ (kromě $k = 1$). Tím pádem součet v každém řádku kromě prvního je roven součtu součtů posloupnosti od 1 do $n$ a od 1 po $k$. Celkový součet je tedy:
+
+\[
+	S = n \cdot \frac{1}{2} n (n + 1) + \sum_{k = 2}^{n} \frac{1}{2} (k - 1) k
+\]
+
+Pro výpočet sumy využijeme toho, že každý sčítanec té sumy lze vyjádřit jako kombinační číslo, které můžeme snadno sečíst:
+
+\[
+	\sum_{k = 2}^{n} \frac{1}{2} (k - 1) k = \sum_{k = 2}^{n} \binom{k}{2} = \binom{3}{3} + \sum_{k = 3}^{n} \binom{k}{2} = \binom{n + 1}{3} = \frac{n (n - 1)(n - 2)}{6}
+\]
+
+Tento výraz nám pak stačí dosadit do celkového součtu:
+
+\[
+	S = \frac{n^2 (n + 1)}{2} + \frac{n (n - 1)(n - 2)}{6} = \frac{3n^3 + 3n^2 + n^3 -3n^2 + 2n}{6} = n \cdot \frac{2n^2 + 1}{3}
+\]
+
+Tím jsme nalezli celkový součet v závislosti na $n$.
+
+
+\end{document}

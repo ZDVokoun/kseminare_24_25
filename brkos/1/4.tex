@@ -1,0 +1,38 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1}
+\problem{4} 
+
+\begin{document}
+
+Můžeme si všimnout, že tato funkce bude nejspíš růst exponenciálně, tím pádem budeme předpokládat, že $f(n) = 2^{n - 1} + g(n)$, tudíž $g(1) = 0$ a pro $g(n)$ platí:
+
+\[
+	2^{n - 1} + g(n) = 2^{n - 1} + 2 g(n - 1) + n - 3
+\]
+\[
+	g(n) = 2 g(n - 1) + n - 3
+\]
+
+Teď zkusíme dosadit prvních několik hodnot:
+
+\[
+	g(2) = -1 \qquad g(3) = -2 \qquad g(4) = -3
+\]
+
+Vypadá to, že funkce $g(n) = 1 - n$. To pro první členy platí, tím pádem nám zbývá dokázat indukční krok:
+
+\[
+	2 g(n - 1) + n - 3 = 2 (1 - n + 1) + n - 3 = 1 - n = g(n)
+\]
+
+Indukční krok tedy platí, tedy jsme dokázali, že $g(n) = 1 - n$, tím pádem jsme i dokázali, že $f(n) = 2^{n - 1} - n + 1$, protože rekurentní vztah pro $g(n)$ jsme odvodili ekvivalentními úpravami ze vztahu pro $f(n)$. Tím je důkaz u konce.
+
+\end{document}

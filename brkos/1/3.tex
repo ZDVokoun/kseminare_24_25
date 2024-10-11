@@ -1,0 +1,48 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1}
+\problem{3} 
+
+\begin{document}
+
+Můžeme velmi snadno ukázat, že nerovnost $\sqrt{x^2 - 1} \leq x$ pro $x > 1$ platí:
+
+\[
+	\sqrt{x^2 - 1} \leq x
+\]
+\[
+	x^2 - 1 \leq x^2
+\]
+\[
+	-1 \leq 0
+\]
+
+Když tedy nerovnosti $\sqrt{x^2 - 1} \leq x$ a $\sqrt{y^2 - 1} \leq y$ dosadíme do nerovnosti ze zadání, dostaneme:
+
+\[
+	\frac{x}{\sqrt{y^2 - 1}} + \frac{y}{\sqrt{x^2 - 1}} \geq \frac{x}{y} + \frac{y}{x} \geq 2
+\]
+
+U první nerovnosti víme, že platí, proto stačí dokázat jen druhou nerovnost:
+
+\[
+	(x - y)^2 \geq 0
+\]
+\[
+	x^2 + y^2 \geq 2xy
+\]
+\[
+	\frac{x}{y} + \frac{y}{x} \geq 2
+\]
+
+Tímto jsme dokázali tedy nerovnost ze zadání.
+
+
+\end{document}

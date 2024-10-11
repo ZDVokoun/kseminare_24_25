@@ -1,0 +1,41 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1}
+\problem{1} 
+
+\begin{document}
+
+Protože platí z Pythagorovy věty, že přepona je nutně větší než obě z přepon, stačí nám vyvrátit jen případy, kdy odvěsna dělí jinou odvěsnu a kdy odvěsna dělí přeponu.
+
+BÚNO předpokládejme, že $a | b$. Pak $b = ka$, kde $k \in \mathbb{N}$. Po dosazení do Pythagorovy věty dostaneme:
+
+\[
+	a^2 + k^2 a^2 = c^2
+\]
+\[
+	(k^2 + 1) a^2 = c^2
+\]
+
+Aby $c$ bylo celé číslo, musí pak výraz $k^2 + 1$ být čtverec, což však nastane jen když $k = 0$ a tedy když $b = 0$, protože rozdíl mezi dvěma sousedními čtverci je $(x + 1)^2 - x^2 = 2x + 1$. Tento případ tedy nastat nemůže.
+
+Teď předpokládejme, že $a | c$. Pak platí:
+
+\[
+	a^2 + b^2 = k^2 a^2
+\]
+\[
+	b^2 = (k^2 - 1) a^2
+\]
+
+Tato rovnice nelze splnit ze stejných důvodů jako předchozí, proto i tento případ nelze splnit.
+
+Tím jsme rozebrali veškeré případy, tedy důkaz je u konce.
+
+\end{document}

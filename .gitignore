@@ -3,3 +3,6 @@
 *.aux
 *.in
 *.csv
+*/ksp-klient.py
+*/a.out
+*/in.txt
