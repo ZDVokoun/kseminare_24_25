@@ -1,0 +1,53 @@
+zero: const 0
+one: const 1
+minone: const -1
+max: const 2047
+minimum: const -2049
+
+i: id
+in: input 1
+vlevo: left in
+vpravo: right in
+first: = i zero
+last: = i max
+change_left: < vlevo in
+change_right: > vpravo in
+change: | change_right change_left
+change: | change last
+change: | change first
+change: * change minone
+sort change
+
+
+vlevo: left in
+vpravo: right in
+i_left: left i
+i_left: - i i_left
+i_left: + i_left one
+i_right: right i
+i_right: - i_right i
+i_right: + i_right one
+change_left: < vlevo in
+change_right: > vpravo in
+nchange_left: != one change_left
+nchange_right: != one change_right
+nchange: != minone change
+
+count: if nchange_left i_left one
+count: if nchange_right i_right one
+count: if nchange minone count
+count: * minone count
+
+sort count
+
+first: = i zero
+vlevo: left count
+fst: > vlevo count
+first_zero: = fst first
+res: if first_zero in minone
+count: if first minimum count
+
+sort count
+
+vpravo: right in
+res: if first_zero res vpravo

@@ -1,0 +1,95 @@
+zero: const 0
+one: const 1
+two: const 2
+four: const 4
+eight: const 8
+st: const 16
+tt: const 32
+sf: const 64
+ohte: const 128
+thfs: const 256
+fhtw: const 512
+ottf: const 1024
+ttfe: const 2048
+
+i: id
+res: input 1
+
+mod_two: % i two
+is_two: = mod_two zero
+vpravo: right res
+sum: + res vpravo
+res: if is_two sum zero
+sort mod_two
+
+mod_four: % i four
+is_four: = mod_four zero
+vpravo: right res
+sum: + res vpravo
+res: if is_four sum zero
+sort mod_four
+
+mod_eight: % i eight
+is_eight: = mod_eight zero
+vpravo: right res
+sum: + res vpravo
+res: if is_eight sum zero
+sort mod_eight
+
+mod_st: % i st
+is_st: = mod_st zero
+vpravo: right res
+sum: + res vpravo
+res: if is_st sum zero
+sort mod_st
+
+mod_tt: % i tt
+is_tt: = mod_tt zero
+vpravo: right res
+sum: + res vpravo
+res: if is_tt sum zero
+sort mod_tt
+
+mod_sf: % i sf
+is_sf: = mod_sf zero
+vpravo: right res
+sum: + res vpravo
+res: if is_sf sum zero
+sort mod_sf
+
+mod_ohte: % i ohte
+is_ohte: = mod_ohte zero
+vpravo: right res
+sum: + res vpravo
+res: if is_ohte sum zero
+sort mod_ohte
+
+mod_thfs: % i thfs
+is_thfs: = mod_thfs zero
+vpravo: right res
+sum: + res vpravo
+res: if is_thfs sum zero
+sort mod_thfs
+
+mod_fhtw: % i fhtw
+is_fhtw: = mod_fhtw zero
+vpravo: right res
+sum: + res vpravo
+res: if is_fhtw sum zero
+sort mod_fhtw
+
+mod_ottf: % i ottf
+is_ottf: = mod_ottf zero
+vpravo: right res
+sum: + res vpravo
+res: if is_ottf sum zero
+sort mod_ottf
+
+mod_ttfe: % i ttfe
+is_ttfe: = mod_ttfe zero
+vpravo: right res
+sum: + res vpravo
+res: if is_ttfe sum zero
+sort mod_ttfe
+
+copy res

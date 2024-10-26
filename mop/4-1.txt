@@ -1,0 +1,13 @@
+i: id
+vstup: input 1
+zero: const 0
+
+sort vstup
+vstup_nalevo: left vstup
+is_first: > vstup_nalevo vstup
+isnt_zero: != i zero
+
+sort isnt_zero
+
+vpravo: right vstup
+if is_first vstup vpravo

@@ -1,0 +1,54 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{2p}
+\problem{5} 
+
+\begin{document}
+
+Ze soustavy trojúhelníkových nerovností platí, že pokud je trojúhelník o stranách $a$, $b$, $c$ nedegenerovaný, pak je obsah daného trojúhelníku kladné reálné číslo nebo jinak zapsáno:
+
+\[
+	(a + b + c)(- a + b + c)(a - b + c)(a + b - c) > 0
+\]
+
+Nechť je výraz na levé straně $g(a, b, c)$. Pak platí:
+
+\[
+	g(a, b, c) = (a + b + c)(- a + b + c)(a - b + c)(a + b - c) = -a^4 - b^4 -c^4 + 2a^2 b^2 + 2b^2 c^2 + 2a^2 c^2
+\]
+
+Teď dokážeme, že dokážeme hrany čtyřstěnu rozdělit na dvě trojice podle zadání. Nechť hrany $a$, $b$, $c$ tvoří podstavu čtyřstěnu a $d$,$e$,$f$ jsou postupně hrany protější vůči zbývajícím třem. Protože stěny čtyřstěnu jsou nutně nedegenerované trojúhelníky, platí:
+
+\[
+	g(a,b,c) > 0
+\]
+\[
+	g(a,e,f) > 0
+\]
+\[
+	g(b,d,f) > 0
+\]
+\[
+	g(c,d,e) > 0
+\]
+
+Jejich součet pak můžeme upravit na:
+
+\begin{gather*}
+	g(a,b,c) + g(a,e,f) + g(b,d,f) + g(c,d,e) \\
+	= -2 \cdot (a^4 + b^4 + c^4 + d^4 + e^4 +f^4) \\
+	+ 2 \cdot (a^2 b^2 + a^2 b^2 + a^2 e^2 + a^2 f^2+b^2 c^2 + b^2 d^2 + b^2 f^2 + c^2 d^2 + c^2 e^2 + d^2 e^2 + d^2 f^2 + e^2 f^2 ) \\
+	= g(d,e,f) + g(a, b, f) + g(a,c,e) + g(b,c,d)
+\end{gather*}
+
+Anžto víme, že výraz výše je nutně větší než 0, musí jeden z trojúhelníků složený z trojic $(d,e,f)$, $(a,b,f)$, $(a,c,e)$ a $(b,c,d)$ být nedegenerovaný. A protože ke každé z těchto trojic umíme přiřadit druhou trojici tvořící nedegenerovaný trojúhelník, dokázali jsme tvrzení ze zadání.
+
+\end{document}

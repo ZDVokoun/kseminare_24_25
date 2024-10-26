@@ -9,6 +9,43 @@ typedef vector<int> vint;
 typedef vector<bool> vbool;
 typedef pair<int, int> pint;
 
+vector<int> topologicalSort(vector<vector<int>> &adj, int V) {
+  vector<int> indegree(V);
+  for (int i = 0; i < V; i++) {
+    for (auto it : adj[i]) {
+      indegree[it]++;
+    }
+  }
+
+  queue<int> q;
+  for (int i = 0; i < V; i++) {
+    if (indegree[i] == 0) {
+      q.push(i);
+    }
+  }
+  vbool visited(V);
+  vector<int> result;
+  if (q.empty())
+    q.push(0);
+  while (!q.empty()) {
+    int node = q.front();
+    q.pop();
+    result.push_back(node);
+    visited[node] = true;
+
+    for (auto it : adj[node]) {
+      if (visited[it])
+        continue;
+      indegree[it]--;
+
+      if (indegree[it] == 0)
+        q.push(it);
+    }
+  }
+
+  return result;
+}
+
 signed main(int argc, char *argv[]) {
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);

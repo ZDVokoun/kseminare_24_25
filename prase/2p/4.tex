@@ -1,0 +1,22 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{2p}
+\problem{4} 
+
+\begin{document}
+
+Jako první dokážeme, že pokud Ocásek se bude nacházat mimo povrch Čuníku, pak pokud se bude chtít Ocásek vrátit zpět na povrch planety, bude muset urazit stejnou vzdálenost, ať už si vybere jakoukoli tečnu, po které se bude vracet.
+
+Nechť provedeme řez planetou takový, že v ní bude ležet střed planety, Ocásek a vybraná tečna k planetě. Tečna k dané planetě je nutně i tečna ke kružnici vzniklá tímto řezem a zároveň pokud uvážíme i druhou tečnu, která leží v tomto řezu, víme, že Ocásek je od obou tečných bodů stejně vzdálen. Teď si ale musíme uvědomit, že když vybereme jakoukoli jinou tečnu a provedeme řez touto tečnou a středem planety, pak poloměr získané kružnice bude stejný a vzdálenost Ocásku od kružnice bude stejný, tím pádem vzdálenost Ocásku od dotykových bodů tečen bude stejný. Tím jsme dokázali, že pokud se bude chtít Ocásek vrátit, pak musí urazit všude stejnou vzdálenost.
+
+Teď to, co nám zbývá dokázat, je to, že vzdálenost, kterou urazí při vzdalování se od planetky, je stejně velká jako vzdálenost, kterou urazí při přibližování se planetě. Pokud se vzdálenost Ocásku od určitého bodu dotyku tečny změní o $\Delta x$, pak od všech ostatních nových bodů dotyků tečny bude taky vzdálen $x + \Delta x$. A protože chceme, aby nakonci součet byl roven nule (tehdy přistál na planetě), a víme, že Ocásek začíná na planetě a tedy počáteční $x = 0$, musí být součet vzdáleností, kdy se vzdaluje, roven součtu vzdáleností, kdy se přibližuje. A jelikož se Ocásek pohne vždy o celočíselnou vzdálenost, urazí nutně sudou celočíselnou vzdálenost za dobu letu. Q.E.D.
+
+\end{document}
