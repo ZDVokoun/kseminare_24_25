@@ -1,0 +1,36 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{3p}
+\problem{2} 
+
+\begin{document}
+
+Jako první si vypíšeme, jak se mění funkce ze zadání při skládání:
+
+\[
+	f(x) = \frac{1}{1 - x}
+\]
+\[
+	f^2(x) = \frac{1}{1 - \frac{1}{1-x}} = \frac{1}{\frac{1 - x - 1}{1 - x}} = \frac{x - 1}{x} = 1 - \frac{1}{x}
+\]
+\[
+	f^3(x) = 1 - (1 - x) = x
+\]
+
+Jak můžeme vidět, hodnoty při skládání se budou cyklit s periodou 3. A protože $3 \mid 2025$, pak:
+
+\[
+	f^{2025}(2024) = 2024
+\]
+
+Toto je tedy výsledek, který jsme hledali.
+
+\end{document}

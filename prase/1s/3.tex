@@ -1,0 +1,59 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1s}
+\problem{3} 
+
+\begin{document}
+
+Nechť $x = \frac{1}{r}$. Poněvadž víme, že $x \neq 0$ a $r \neq 0$, můžeme s rovnicí, která pro $r$ platí, provést následující úpravy:
+
+\[
+	P\left(\frac{1}{r}\right) = r^2
+\]
+
+\[
+	P\left(x\right) = x^{-2}
+\]
+\[
+	P\left(x\right) - x^{-2} = 0
+\]
+\[
+	x^2 P(x) - 1 = 0
+\]
+
+Označme polynom, který nám tady vznikl, $Q(x) = x^2 P(x) - 1$. Víme pak, že $\deg(Q) = 2026$, že vedoucí koeficient tohoto polynomu je 1 a že pro všechna celá $n$ takové, že $1 \leq |n| \leq 1012$ jsou všechna $\frac{1}{n}$ kořeny tohoto polynomu. Tím pádem můžeme najít nejvýše další dva kořeny.
+
+U polynomu $Q$ známe kromě vedoucího koeficientu ještě dva další, a to předposlední a poslední, tím pádem z Vi\` etových vzorců můžeme získat soustavu, která určí veškeré zbývající kořeny k nalezení. Pokud řešení této soustavy budou reálná čísla, našli jsme další reálná čísla splňující vztah ze zadání. Pokud ale řešení budou komplexní, další taková čísla neexistují.
+
+Vztah pro předposlední koeficient bude mít 2026 členů. Avšak teď uvážíme všechny členy, kde v jejich součinu jsou oba zbývající kořeny $x_1$ a $x_2$. Tehdy ten součin, kde je vynechané číslo $\frac{1}{n}$, lze vždy spárovat se součinem, kde je vynechané $ - \frac{1}{n}$ a tím pádem se vyruší. Proto celý ten součet nám stačí vyjádřit takto:
+
+\[
+	\frac{1}{1} \cdot \left(- \frac{1}{1}\right) \cdot \frac{1}{2} \cdots \left(- \frac{1}{1012}\right) \cdot \left(x_1 + x_2\right) = 0
+\]
+\[
+	x_2 = - x_1
+\]
+
+Teď můžeme rovnou vyjádřit poslední vztah a z něj získat výsledné kořeny:
+
+\[
+	\frac{1}{1} \cdot \left(- \frac{1}{1}\right) \cdot \frac{1}{2} \cdots \left(- \frac{1}{1012}\right) \cdot x_1 \cdot x_2 = -1
+\]
+\[
+	\left(\frac{1}{1012!}\right)^2 \cdot (- x_1^2) = -1
+\]
+\[
+	x_1^2 = (1012!)^2
+\]
+
+Z toho tedy máme, že zbývající kořeny polynomu $Q$ jsou $x_1 = - 1012!$ a $x_2 = 1012!$. Všechna další reálná čísla splňující tento vztah jsou tedy $r = \pm \frac{1}{1012!}$.
+
+\end{document}

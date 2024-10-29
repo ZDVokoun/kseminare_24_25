@@ -1,0 +1,24 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{2p}
+\problem{6} 
+
+\begin{document}
+
+Toto tvrzení dokážu indukcí, kdy budeme postupně přidávat hrany zadaného rovinného grafu a těm přiřazovat směr. Nejdříve si však zadefinuji pojmy, které budu v důkazu užívat -- nenasycený vrchol je takový vrchol, ze kterého vedou méně než tři hrany, z nasyceného vrcholu povedou právě tři hrany a z přesyceného povedou více než tři hrany. V důkazu předpokládám, že zadaný graf je spojitý. Pokud ale graf spojitý není, pak stačí graf rozdělit na jednotlivé komponenty, které už spojité jsou. Pokud to pak pro jednotlivé komponenty platí, pak to nutně platí pro celý graf.
+
+Pokud žádný vrchol není spojený hranou, tak tvrzení ze zadání zjevně platí. Pak indukční krok se bude dělit na dva případy -- buď přidané hraně umíme rovnou přiřadit směr, protože jeden ze spojovaných vrcholů je nenasycený (ten nastane vždy, když $|V| \leq 4$), nebo oba spojované vrcholy jsou nasycené a tedy při přidání hrany se jeden vrchol přesytí, což budeme muset spravit změnou orientace některých hran. Víme, že pro počet vrcholů $|V| > 2$ a počet hran $|E|$ platí, že $|E| \leq 3 \cdot |V| - 6$, z čehož nutně platí, že každý rovinný graf, který má validně orientované hrany, musí mít alespoň nějaký nenasycený vrchol. Pokud tedy ukážeme, že existuje cesta z přesyceného vrcholu do nějakého nenasyceného vrcholu, stačí nám k opravení grafu jen změnit orientaci každé hrany, která tuto cestu tvoří. Existenci této cesty dokážeme sporem.
+
+Předpokládejme tedy, že cesta z přesyceného do nenasyceného vrcholu neexistuje, tudíž každá cesta z přesyceného vrcholu vede jen do nasycených vrcholů. Teď uvažujeme takový podgraf, kde jsou všechny vrcholy, které jsou dostupné z přesyceného vrcholu. V tomto podgrafu pak nutně musí zůstat u každého vrcholu počet výstupních hran zachován a zároveň se musí jednat o rovinný graf, protože rozdělený rovinný graf je zase rovinný graf. To je však spor, protože pro rovinný graf platí, že $|E| \leq 3 \cdot |V| - 6$ a pro tento podgraf platí, že $|E| > 3 \cdot V$. Tím jsme ukázali, že cesta z přesyceného do nenasyceného vrcholu nutně existuje a tedy graf s přesyceným vrcholem lze v každém kroku spravit.
+
+Máme indukční krok tedy dokázaný, čímž je důkaz indukcí u konce. Q. E. D.
+
+\end{document}

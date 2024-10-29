@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 #define endl '\n'
 #define nl '\n'
+#define MAX INT32_MAX
 
 using namespace std;
 typedef long long ll;
@@ -8,42 +9,13 @@ typedef vector<long long> vll;
 typedef vector<int> vint;
 typedef vector<bool> vbool;
 typedef pair<int, int> pint;
+typedef pair<ll, ll> pll;
 
-vector<int> topologicalSort(vector<vector<int>> &adj, int V) {
-  vector<int> indegree(V);
-  for (int i = 0; i < V; i++) {
-    for (auto it : adj[i]) {
-      indegree[it]++;
-    }
-  }
-
-  queue<int> q;
-  for (int i = 0; i < V; i++) {
-    if (indegree[i] == 0) {
-      q.push(i);
-    }
-  }
-  vbool visited(V);
-  vector<int> result;
-  if (q.empty())
-    q.push(0);
-  while (!q.empty()) {
-    int node = q.front();
-    q.pop();
-    result.push_back(node);
-    visited[node] = true;
-
-    for (auto it : adj[node]) {
-      if (visited[it])
-        continue;
-      indegree[it]--;
-
-      if (indegree[it] == 0)
-        q.push(it);
-    }
-  }
-
-  return result;
+void DFS(vector<vector<pll>> &graph, vbool &visited, ll u) {
+  visited[u] = true;
+  for (auto [v, w] : graph[u])
+    if (!visited[v])
+      DFS(graph, visited, v);
 }
 
 signed main(int argc, char *argv[]) {
@@ -52,79 +24,63 @@ signed main(int argc, char *argv[]) {
 
   ll t, o;
   cin >> t >> o;
-  vector<list<pair<ll, ll>>> outedge(t);
-  vector<list<pair<ll, ll>>> inedge(t);
+  vector<vector<pair<ll, ll>>> edge(t);
+  vll indegree(t);
   ll u, v, c;
   for (ll i = 0; i < o; i++) {
     cin >> u >> v >> c;
-    inedge[u - 1].push_back({v - 1, c});
-    outedge[v - 1].push_back({u - 1, c});
+    edge[u - 1].push_back({v - 1, -c});
+    indegree[v - 1]++;
   }
+  vll dist(t, MAX);
   vbool visited(t);
-  set<pair<ll, ll>> visited_inedge;
-  set<pair<ll, ll>> visited_outedge;
-  queue<ll> q;
-  vll values(t);
-  vbool hasvalue(t);
-  // for (ll u = 0; u < t; u++)
-  //   if (outedge[u].size() == 0) {
-  //     q.push(u);
-  //     hasvalue[u] = true;
-  //     visited[u] = true;
-  //   }
-  if (q.empty()) {
-    q.push(0);
-    hasvalue[0] = true;
-    visited[0] = true;
+  for (ll i = 0; i < t; i++) {
+    if (indegree[i] == 0) {
+      dist[i] = 0;
+      DFS(edge, visited, i);
+    }
   }
-  while (!q.empty()) {
-    ll cur = q.front();
-    q.pop();
-    for (auto p : inedge[cur]) {
-      if (visited_inedge.find({cur, p.first}) != visited_inedge.end())
-        continue;
-      if (hasvalue[p.first])
-        values[p.first] = min(values[p.first], values[cur] - p.second);
-      else {
-        values[p.first] = values[cur] - p.second;
-        hasvalue[p.first] = true;
-      }
-      if (!visited[p.first]) {
-        q.push(p.first);
-        visited[p.first] = true;
-      }
-      visited_inedge.insert({cur, p.first});
-      visited_outedge.insert({p.first, cur});
+  for (int u = 0; u < t; u++) {
+    if (!visited[u]) {
+      dist[u] = 0;
+      DFS(edge, visited, u);
     }
-    for (auto p : outedge[cur]) {
-      if (visited_outedge.find({cur, p.first}) != visited_outedge.end())
+  }
+
+  vbool closed(t);
+  bool updated = false;
+  for (ll i = 1; i < t - 1; i++) {
+    for (ll u = 0; u < t; u++) {
+      if (dist[u] == MAX || closed[u])
         continue;
-      if (hasvalue[p.first])
-        values[p.first] = max(values[p.first], values[cur] + p.second);
-      else {
-        values[p.first] = values[cur] + p.second;
-        hasvalue[p.first] = true;
+      for (pll e : edge[u]) {
+        if (dist[e.first] > dist[u] + e.second) {
+          updated = true;
+          dist[e.first] = dist[u] + e.second;
+          closed[e.first] = false;
+        }
       }
-      if (!visited[p.first]) {
-        q.push(p.first);
-        visited[p.first] = true;
-      }
-      visited_outedge.insert({cur, p.first});
-      visited_inedge.insert({p.first, cur});
+      closed[u] = true;
     }
+    if (!updated)
+      break;
   }
   for (ll u = 0; u < t; u++) {
-    for (auto p : inedge[u]) {
-      if (values[u] < values[p.first] + p.second) {
+    if (!updated)
+      break;
+    if (dist[u] == MAX || closed[u])
+      continue;
+    for (pll e : edge[u]) {
+      if (dist[e.first] > dist[u] + e.second) {
         cout << "nelze" << endl;
         return 0;
       }
     }
   }
-  for (ll i = 0; i < t - 1; i++)
-    cout << values[i] << " ";
-
-  cout << values[t - 1] << endl;
+  for (ll i = 0; i < t - 1; i++) {
+    cout << dist[i] << " ";
+  }
+  cout << dist[t - 1] << endl;
 
   return 0;
 }

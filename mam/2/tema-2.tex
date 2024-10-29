@@ -1,0 +1,201 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{2}
+\problem{2} 
+
+\begin{document}
+
+\section{Úloha 1}
+
+Nechť $\mathbf{D} = \mathbf{A} \cdot \mathbf{B}$, $\mathbf{E} = \mathbf{B} \cdot \mathbf{C}$ a $\mathbf{A} \in \mathbb{R}^{m \times n}$, $\mathbf{B} \in \mathbb{R}^{n \times o}$, $\mathbf{C} \in \mathbb{R}^{o \times p}$. Pokud platí pro nějakou matici $\mathbf{X} = (\mathbf{A} \cdot \mathbf{B}) \cdot \mathbf{C}$, pak z definice maticového násobení platí:
+
+\[
+	x_{ij} = \sum_{l = 1}^o d_{il} c_{lj} = \sum_{l = 1}^o \left( \sum_{k = 1}^n a_{ik} b_{kl} \right) c_{lj} = \sum_{l = 1}^o \sum_{k = 1}^n a_{ik} b_{kl} c_{lj} = \sum_{k = 1}^n \sum_{l = 1}^o a_{ik} b_{kl} c_{lj} = \sum_{k = 1}^o a_{ik} \left( \sum_{l = 1}^n b_{kl} c_{lj} \right) = \sum_{k = 1}^n a_{ik} e_{kj}
+\]
+
+Tudíž pak i $\mathbf{X} = \mathbf{A} \cdot (\mathbf{B} \cdot \mathbf{C})$.
+
+\section{Úloha 2}
+
+To dokážeme taky rovnou z definice:
+
+\[
+	x_{ij} = \sum_{k = 1}^n a_{ik} \cdot (b_{kj} + c_{kj}) = \sum_{k = 1}^n a_{ik} b_{kj} +a_{ik} c_{kj} = \sum_{k = 1}^n a_{ik} b_{kj} + \sum_{k = 1}^n a_{ik} c_{kj}
+\]
+
+Tudíž $\mathbf{X} = \mathbf{A} \cdot (\mathbf{B} + \mathbf{C}) = \mathbf{A} \cdot \mathbf{B} + \mathbf{A} \cdot \mathbf{C}$
+
+\section{Úloha 3}
+
+Nejprve si všimneme toho, že vektory jsou lineárně závislé:
+
+\[
+	- \frac{1}{2} \cdot\begin{pmatrix}
+		1 \\ 2 \\ 2
+	\end{pmatrix} - \frac{1}{2} \cdot
+	\begin{pmatrix}
+		1 \\ -2 \\ 14
+	\end{pmatrix} =
+	\begin{pmatrix}
+		-1 \\ 0 \\ 8
+	\end{pmatrix}
+\]
+
+Takže můžeme vybrat jen dvě z nich a z nich získat lineární kombinaci:
+
+\[
+	a \cdot
+	\begin{pmatrix}
+		1 \\ 2 \\ 2
+	\end{pmatrix}
+	+ b \cdot
+	\begin{pmatrix}
+		-1 \\ 0 \\ -8
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		3 \\ 5 \\ 9
+	\end{pmatrix}
+\]
+
+Zde z druhého řádku vidíme, že $a = \frac{5}{2}$ a z toho dopočítáme $b = - \frac{1}{2}$. Když tyto hodnoty vyzkoušíme, rovnice platí, tedy můžeme získat lineární kombinaci jiné dvojice:
+
+\[
+	c \cdot
+	\begin{pmatrix}
+		1 \\ -2 \\ 14
+	\end{pmatrix}
+	+ d \cdot
+	\begin{pmatrix}
+		-1 \\ 0 \\ -8
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		3 \\ 5 \\ 9
+	\end{pmatrix}
+\]
+
+Z druhého řádku vidíme, že $c = - \frac{5}{2}$ a z toho $d = - \frac{11}{2}$.
+
+
+\section{Úloha 4}
+
+Nejprve rovnici upravíme:
+
+\[
+	\mathbf{A} \mathbf{x} = \mathbf{A} \mathbf{y}
+\]
+\[
+	\mathbf{A} \mathbf{x} - \mathbf{A} \mathbf{y} = \mathbf{0}
+\]
+\[
+	\mathbf{A} \cdot (\mathbf{x} - \mathbf{y}) = \mathbf{0}
+\]
+
+Pokud jsou vektory $\mathbf{x}$ a $\mathbf{y}$ různé, pak jejich rozdíl je nenulový. Z toho však plyne, že existuje lineární kombinace sloupců matice $\mathbf{A}$, která se sečte na nulový vektor a má nenulové koeficienty. To je však spor s regularitou matice $\mathbf{A}$, proto tedy vektory $\mathbf{x}$ a $\mathbf{y}$ jsou nutně různé.
+
+\section{Úloha 5}
+
+Pokud $\mathbf{A} \cdot \mathbf{B} = \mathbf{I}$ a $\mathbf{X} \cdot \mathbf{A} = \mathbf{I}$, pro matici $\mathbf{X}$ platí:
+
+\[
+	\mathbf{X} = \mathbf{X} \cdot \mathbf{I} = \mathbf{X} \cdot (\mathbf{A} \cdot \mathbf{B}) = (\mathbf{X} \cdot \mathbf{A}) \cdot \mathbf{B} = \mathbf{B}
+\]
+
+Tím jsme dokázali, že $\mathbf{A} \cdot \mathbf{B} = \mathbf{B} \cdot \mathbf{A} = \mathbf{I}$.
+
+\section{Problém 6}
+
+Matice úprav pro výměnu řádků lze vyjádřit jako jednotkovou matici, která má některé řádky prohozené. Pokud budeme chtít vynásobit řádek $i$, pak v jednotkové matici dosadíme za jedničku na $(i,i)$ číslo $\alpha$. Pak pokud budeme chtít k $i$-tému řádku přičíst $\alpha$-násobek $j$-tého řádku, pak v jednotkové matici na $(i,j)$ dosadíme $\alpha$.
+
+Pro důkaz, že matice úprav jsou regulární, musíme ukázat, že jednotkové matice jsou regulární. To lze ukázat snadno, protože ať už vybereme jakýkoli sloupec jednotkové matice, vždy bude mít nenulovou hodnotu na místě, kde všechny ostatní sloupce mají nulu. Z toho nutně plyne, že sloupce jsou lineárně nezávislé a proto tedy je jednotková matice regulární.
+
+Z toho pak umíme ukázat, že veškeré matice úprav jsou regulární -- při výměně řádku jen sloupcové vektory změní pořadí, při násobení řádku můžeme použít totožný argument jako u jednotkové matice. Při přičítání násobku řádku k jinému řádku pak bude platit, že jeden sloupec bude mít nenulové hodnoty dvě (nechť je to $\mathbf{x}$), tudíž bude mít nenulovou hodnotu na místě, kde ji má i jiný sloupec (nechť je to $\mathbf{y}$). Tyto sloupce jsou však stále nezávislé, protože sloupec $\mathbf{x}$ má stále jedničku na místě, kde ostatní sloupce nemají a $\mathbf{x}$ a $\mathbf{y}$ jsou jak nezávislé vůči ostatním, tak vůči sobě (když se je pokusíme odečíst na nulový vektor, vždy nám u jednoho z vektorů bude přebývat nějaká nenulová hodnota). Tím jsme dokázali, že veškeré matice úprav jsou regulární.
+
+\section{Úloha 7}
+
+Víme, že rozšířená matice $(\mathbf{A}|\mathbf{I})$ se používá pro zápis soustavy $\mathbf{A} \cdot \mathbf{X} = \mathbf{I}$. Pokud tedy nakonci dostaneme matici $(\mathbf{I}|\mathbf{B})$, získali jsme soustavu $\mathbf{I} \cdot \mathbf{X} = \mathbf{B}$, tudíž $\mathbf{B}$ opravdu splňuje definici inverzní matice.
+
+\section{Úloha 8}
+
+Z výsledku Úlohy 4 víme, že pro regulární matici $\mathbf{A}$ existuje nejvýše jediné řešení rovnice $\mathbf{A} \mathbf{x} = \mathbf{b}$. A protože násobení matic $\mathbf{A} \cdot \mathbf{B}$ umíme upravit na násobení matice $\mathbf{A}$ se sloupcovými vektory $\mathbf{B}$, má soustava $\mathbf{A} \cdot \mathbf{X} = \mathbf{B}$ nejvýše jediné řešení a proto i inverzní matice je nejvýše jedna.
+
+U druhého tvrzení zase použijeme výsledek z Úlohy 4. Když součiny v rovnici $\mathbf{A} \cdot \mathbf{B} = \mathbf{A} \cdot \mathbf{C}$ rozložíme na součet součinů matice $\mathbf{A}$ s sloupcovými vektory zbylých matic, z Úlohy 4 plyne, že $\mathbf{B} = \mathbf{C}$, čímž jsme druhé tvrzení dokázali.
+
+Třetí tvrzení jde dokázat tím, že víme, že $\mathbf{A} \cdot \mathbf{B} = \mathbf{B} \cdot \mathbf{A} = \mathbf{I}$. Pak $\mathbf{B}$ je inverze $\mathbf{A}$, $\mathbf{A}$ je inverze $\mathbf{B}$ a tedy inverzní matice k inverzní matici $\mathbf{A}$ je $\mathbf{A}$.
+
+\section{Úloha 9}
+
+\[
+	\left(
+	\begin{array}{ccc|c}
+			2 & 6 & 5  & 0  \\
+			3 & 5 & 18 & 33 \\
+			1 & 2 & 5  & 8  \\
+		\end{array}
+	\right)
+\]
+\[
+	\left(
+	\begin{array}{ccc|c}
+			1 & 2 & 5  & 8  \\
+			2 & 6 & 5  & 0  \\
+			3 & 5 & 18 & 33 \\
+		\end{array}
+	\right)
+\]
+\[
+	\left(
+	\begin{array}{ccc|c}
+			1 & 2  & 5  & 8   \\
+			0 & 2  & -5 & -16 \\
+			0 & -1 & 3  & 9   \\
+		\end{array}
+	\right)
+\]
+\[
+	\left(
+	\begin{array}{ccc|c}
+			1 & 2  & 5  & 8   \\
+			0 & -1 & 3  & 9   \\
+			0 & 2  & -5 & -16 \\
+		\end{array}
+	\right)
+\]
+\[
+	\left(
+	\begin{array}{ccc|c}
+			1 & 2 & 5  & 8  \\
+			0 & 1 & -3 & -9 \\
+			0 & 0 & 1  & 2  \\
+		\end{array}
+	\right)
+\]
+\[
+	\left(
+	\begin{array}{ccc|c}
+			1 & 2 & 5 & 8  \\
+			0 & 1 & 0 & -3 \\
+			0 & 0 & 1 & 2  \\
+		\end{array}
+	\right)
+\]
+\[
+	\left(
+	\begin{array}{ccc|c}
+			1 & 0 & 0 & 4  \\
+			0 & 1 & 0 & -3 \\
+			0 & 0 & 1 & 2  \\
+		\end{array}
+	\right)
+\]
+
+\end{document}

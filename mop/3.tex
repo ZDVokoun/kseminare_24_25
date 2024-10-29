@@ -1,0 +1,22 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{P-I}
+\problem{3} 
+
+\begin{document}
+
+Nejprve si uvědomíme fakt, že pokud budeme chtít postavit budovu o výšce $h + 1$, pak musíme postavit zároveň alespoň dvě budovy o výšce $h$, abychom neporušili protimrakodrapové regulace. A protože toto platí pro všechna celá a kladná čísla $h$, nejvýšší budova, kterou zvládneme postavit, má výšku $\left\lceil \frac{N}{2} \right\rceil$. Tím pádem si založíme pole $C$, které bude sloužit jako counter výšek zadaný zákazníkami.
+
+Když budeme mít v counteru započítané všechny požadavky zákazníků, budeme postupně tento counter procházet od jedničky a konstruovat z něj výstup tak, že při přidávání budov budeme střídavě přidávat budovy na nejlevější a nejpravější volné políčko. Pokud pro výšku $h$ je $C[h] \geq 2$, pak do výstupu hladově přidáme všech $C[h]$ budov (pokud bychom nepřidali všechny, můžeme si jedině přihoršit, protože se uvolní místo jen pro tolik budov, jako je počet těch, které jsme nepřidali). Pokud ale $C[h] < 2$, přidáme do výstupu 2 budovy o výšce $h$, abychom dodrželi protimrakodrapovou regulaci. Tento postup opakujeme do té doby, než velikost výstupu budu $N$.
+
+Protože počítání požadavků a konstruování výstupu trvá lineárně času, je časová složitost tohoto algoritmu $\mathcal{O}(N)$. Prostorová složitost je kvůli counteru a konstrukci výstupu $\mathcal{O}(N)$.
+
+\end{document}

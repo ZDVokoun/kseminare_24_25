@@ -1,0 +1,63 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1s}
+\problem{1} 
+
+\begin{document}
+
+Nejprve formulujeme Vi\` etovi vztahy pro zadaný polynom:
+
+\[
+	x_1 + x_2 + x_3 + x_4 = 0
+\]
+\[
+	x_1 x_2 + x_1 x_3 + x_1 x_4 + x_2 x_3 + x_2 x_4 + x_3 x_4 = -40
+\]
+\[
+	x_1 x_2 x_3 + x_1 x_3 x_4 + x_1 x_2 x_4 + x_2 x_3 x_4 = 0
+\]
+\[
+	x_1 x_2 x_3 x_4 = q
+\]
+
+Protože kořeny $x_1$, $x_2$, $x_3$, $x_4$ tvoří aritmetickou posloupnost s diferencí $d$, pak můžeme všechny kořeny vyjádřit pomocí $x_1$ a $d$ takto:
+
+\[
+	x_2 = x_1 + d \qquad x_3 = x_1 + 2d \qquad x_4 = x_1 + 3d
+\]
+
+Když tedy dosadíme do prvního Vi\`etova vzorce, dostaneme:
+
+\[
+	4x_1 + 6d = 0 \ztoho x_1 = -\frac{3}{2} d
+\]
+
+Tedy všechny kořeny umíme vyjádřit jen pomocí diference takto:
+
+\[
+	x_1 = - \frac{3}{2} d \qquad x_2 = - \frac{d}{2} \qquad x_3 = \frac{d}{2} \qquad x_4 = \frac{3}{2} d
+\]
+
+Při dosazování do třetího Vi\` etova vztahu si všimneme toho, že první a čtvrtý člen se vyruší a že druhý a třetí se též vyruší, tudíž jakmile najdeme řešení druhého Vi\` e tova vztahu, umíme už jednoznačně určit množinu čísel $q$. Když tedy dosadíme výsledky výše do druhého Vi\` etova vztahu, spousta členů se zase vyruší a tedy dostaneme jen:
+
+\[
+	-\frac{9}{4} d^2 - \frac{1}{4} d^2 = -40 \ztoho d^2 = 16
+\]
+
+Vychází nám dvě hodnoty $d$, ale protože množina kořenů bude stejná u obou řešení, vystačíme si s $d = 4$. Teď nám zbývá dosadit jen do posledního vztahu:
+
+\[
+	q = \left(\frac{3}{2} \cdot \frac{1}{2}\right)^2 \cdot 4^4 = 4^2 \cdot 3^2 = 144
+\]
+
+Nalezli jsme tedy jediné $q$, které splňuje všechny vztahy.
+
+\end{document}

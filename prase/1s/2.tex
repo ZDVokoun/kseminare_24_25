@@ -1,0 +1,51 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1s}
+\problem{2} 
+
+\begin{document}
+
+Nejprve si musíme všimnout, že $Q(x^2)$ je nutně polynom se sudým stupněm, avšak stupeň polynomu $(x + 1)^4 - x P(x)^2$ je sudý jen tehdy, když $\deg(P) = \{0,1\}$. Proto tedy funkce $Q(x)$ je kvadratická a $P(x)$ je buď lineární nebo konstatní funkce. Nechť tedy pro polynomy $P$ a $Q$ platí:
+
+\[
+	P(x) = p_1 x + p_0
+\]
+\[
+	Q(x) = q_2 x^2 + q_1 x + q_0
+\]
+
+Kde v případě, kdy $P$ bude konstatní polynom, bude platit $p_1 = 0$. Po dosazení do rovnice dostaneme:
+
+\[
+	q_2 x^4 + q_1 x^2 + q_0 = (x + 1)^4 - x \cdot (p_1 x + p_0)^2
+\]
+\[
+	q_2 x^4 + q_1 x^2 + q_0 = x^4 + 4x^3 + 6x^2 + 4x + 1 - x \cdot (p_1^2 x^2 + 2 p_0 p_1 x + p_0^2)
+\]
+\[
+	q_2 x^4 + q_1 x^2 + q_0 = x^4 + 4x^3 + 6x^2 + 4x + 1 - p_1^2 x^3 - 2 p_0 p_1 x^2 - p_0^2 x
+\]
+\[
+	(q_2 - 1) x^4 + (p_1^2 - 4) x^3 + (q_1 - 6 + 2 p_0 p_1) x^2 + (p_0^2 - 4) x + (q_0 - 1) = 0
+\]
+
+Určíme rovnou snadno některé koeficienty, jako například $q_2 = 1$ a $q_0 = 1$. Ještě víme, že $p_0, p_1 \in \{-2; 2\}$. A protože koeficient $q_1$ je určen čistě jen hodnotami $p_0$ a $p_1$, dostaneme čtyři různé dvojice polynomů:
+
+\[
+	P(x) = \pm 2 x \pm 2 \qquad Q(x) = x^2 - 2 x + 1
+\]
+\[
+	P(x) = \pm 2 x \mp 2 \qquad Q(x) = x^2 + 14 x + 1
+\]
+
+Našli jsme tedy všechny možné dvojice polynomů $P$ a $Q$.
+
+\end{document}

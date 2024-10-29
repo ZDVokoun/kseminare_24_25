@@ -1,0 +1,24 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{37-1}
+\problem{3} 
+
+\begin{document}
+
+Zadané pole si můžeme představit jako orientovaný graf, kde vrcholy jsou jednotlivé pozice v poli, do každého vrcholu vede právě jedna hrana a z každého vrcholu vede právě jedna hrana. Z těchto vlastností lze vyvodit, že každá komponenta tohoto grafu tvoří cyklus (kružnici). Abychom upravili pole $A$ tím způsobem jako je zadáno, musíme v tomto grafu změnit u každé hrany orientaci.
+
+Začneme nejprve s hodnotami $u = 1$, $v = A[u]$. Pak si uložíme hodnotu $w = A[v]$, následně na index $v$ uloží hodnotu $u$ a pak aktualizuje hodnoty $(u, v) = (v, w)$. Pak dokud neprojdeme celý cyklus, jejíž součástí je vrchol 1, tak tento postup opakujeme. Tímto v cyklu, kde se nachází pozice 1, změníme orientaci každé hrany.
+
+Anžto můžeme využívat jen konstantně dodatečné paměti, musíme následně pro každý další index $i \in \{2; 3; ...; N\}$ zkontrolovat, zda neleží v cyklu, kde se nachází i vrcholy $v < i$. Pokud ano, pak tento cyklus již je zpracován, jinak tento cyklus byl ještě nenavštíven.
+
+Tedy pro každé $i \in \{1;2; ...; N\}$ provedeme $\mathcal{O}(N)$ operací (jak kontrola, zda neleží ve zpracovaném cyklu, tak změna orientace hran trvá lineárně času) a tedy celková časová složitost je $\mathcal{O}(N^2)$. A poněvadž prostorová složitost je konstantní, splňuje tento algoritmus podmínku ze zadání.
+
+\end{document}
