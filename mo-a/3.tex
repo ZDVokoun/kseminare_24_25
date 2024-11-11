@@ -1,0 +1,40 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{74-I}
+\problem{3} 
+
+\begin{document}
+
+Víme, že první číslo $a_1 = k$, kde $k \in \mathbb{N}$, a každé další číslo $a_i = \kappa_i \cdot \sum_{j = 1}^{i - 1} a_j$, kde $\kappa_i \in \mathbb{N}$ je koeficient, kterým je násoben suma předchozích čísel. Protože se nám bude hodit vyjádřit každé z čísel na tabuli v součinovém tvaru, dokážeme, že pro $i > 2$ umíme tato čísla i vyjádřit jako $a_i = k \kappa_i \cdot \prod_{j = 2}^{i - 1} (\kappa_j + 1)$. To dokážeme indukcí.
+
+Víme, že pro třetí číslo platí $a_3 = \kappa_3 (a_2 + a_1) = \kappa_3 (\kappa_2 k + k) = k \kappa_3 (\kappa_2 + 1)$, tedy můžeme rovnou jít na důkaz indukčního předpokladu:
+
+\[
+	a_{n + 1} = \kappa_{n + 1} \cdot \sum_{i = 1}^{n} a_i = \kappa_{n + 1} a_{n} + \kappa_{n+1} \sum_{i = 1}^{n - 1} a_i = \kappa_{n + 1} a_{n} + \kappa_{n + 1} \cdot \frac{a_{n}}{\kappa_{n}} =
+\]
+\[
+	= k \kappa_{n + 1} \kappa_{n} \prod_{j = 2}^{n - 1} (\kappa_j + 1) + k \kappa_{n + 1} \prod_{j = 2}^{n - 1} (\kappa_j + 1) = k \kappa_{n + 1} \prod_{j = 2}^{n} (\kappa_j + 1)
+\]
+
+Tím jsme dokázali indukční předpoklad, jak jsme chtěli.
+
+Teď předpokládejme, že čísel na tabuly je $m$. Pak pokud by následující člen měl koeficient $\kappa_{m + 1} = 1$, bude platit:
+
+\[
+	a_{m + 1} = k \prod_{j = 2}^{m} (\kappa_j + 1) = 2024
+\]
+
+Abychom tedy dosáhli co největšího množství čísel na tabuli, zvolíme si $k = 1$. Poněvadž žádný další člen nemůžeme nastavit tak, aby byl roven jedné, a rozklad na prvočísla čísla 2024 je $2^3 \cdot 11 \cdot 23$, je tedy největší možný počet čísel na tabuly $m = 6$. Takovými číslami, které splňují zadání, jsou například 1, 10, 11, 22, 44, 1936.
+
+Tím je důkaz u konce.
+
+
+\end{document}

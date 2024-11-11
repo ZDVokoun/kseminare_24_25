@@ -1,0 +1,42 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{74-I}
+\problem{1} 
+
+\begin{document}
+
+Víme ze zadání, že pro čísla $a$, $b$ platí rovnice:
+
+\[
+	a^2 + b = b^2 + a
+\]
+
+Z této rovnice můžeme vyjádřit hodnotu $b$ na základě $a$:
+
+\[
+	a^2 - a = b^2 - b
+\]
+\[
+	a (a - 1) = b (b - 1)
+\]
+
+Z tohoto tvaru je již zřejmě vidět, že řešením jsou jedno z $b \in \{a, 1 - a\}.$ Teď musíme tedy zjistit, jaký z výrazů $a^2 + a$, $a^2 - a + 1$ nabývá menších hodnot. Stačí nám tedy převést tyto výrazy do vrcholového tvaru:
+
+\[
+	a^2 + a = a^2 + a + \frac{1}{4} - \frac{1}{4} = \left(a + \frac{1}{2}\right)^2 - \frac{1}{4}
+\]
+\[
+	a^2 - a + 1 = a^2 - a + \frac{1}{4} + \frac{3}{4} = \left(a - \frac{1}{2}\right)^2 + \frac{3}{4}
+\]
+
+Odtud je zřejmě vidět, že nejmenší hodnoty nabývají výrazy ze zadání pro $a = b = -\frac{1}{2}
+$, kdy $a^2 + b = b^2 + a = -\frac{1}{4}$, čímž jsme nalezli řešení.
+\end{document}

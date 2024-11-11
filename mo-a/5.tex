@@ -1,0 +1,26 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{74-I}
+\problem{5} 
+
+\begin{document}
+
+V řešení budu na některých místech používat místo součtu mocnin dvojky zápis ve dvojkové soustavě. Tento zápis je nutně ekvivalentní se zápisem ve formě sumy mocnin dvojky, protože ze zadání víme, že každé tlačítko může být zmáčknuto nejvýše jednou. Zároveň nám to umožňuje využít známého faktu, že zápis ve dvojkové soustavě je pro dané číslo jedinečné.
+
+Jako první dokážeme, že pokud budeme chtít zmáčknout sudý počet tlačítek, pak je nutně postup, jak se dostat do patra $n$, jedinečný. Nejprve uvážíme $n = (11...11)_2$. Protože platí $n = (11...11)_2 = (100...00)_2 - (1)_2$, jde toto číslo takto s jistotou vyjádřit. Pokud bychom však chtěli najít nějaký jiný způsob, jak toto číslo vyjádřit, museli bychom přičíst jedničku na nějaké místo jak v menšenci, tak menšiteli. Když přičteme jedničku na místo, kde je v menšenci jednička, tak dostaneme $n = (1000...0)_2 - (1)_2 = (1000...00)_2 - (100...01)_2$, tehdy ale není dodrženo střídání směrů. Když přičteme jedničku na místo, kde je v menšiteli jednička, tak nebude dodržen sudý počet zmáčknutí a když přičteme jedničku na místo, kde je nula v menšenci i menšiteli, bude jedno tlačítko zmáčknuto dvakrát. Tím pádem vyjádření $n = (11...11)_2 = (100...00)_2 - (1)_2$ je jedinečné.
+
+Tím pádem když vyjádříme číslo $n$ ve dvojkové soustavě, tak každý souvislý úsek jedniček ohraničený nulami nebo koncem čísla umíme vyjádřit analogickým způsobem jako výše a ne jinak. Zároveň na místa, kde jsou v menšenci a menšiteli nuly, nemůžeme přidat jedničku, protože bychom pak některá tlačítka zmáčkli dvakrát. Tím pádem jsme ukázali, že při sudém počtu zmáčknutí se můžeme dostat do patra $n$ právě jedním způsobem.
+
+Teď rozebereme případ, kdy zmáčkneme lichý počet tlačítek. Pak víme, že při posledním zmáčknutí budeme vyjíždět nahoru. Toto poslední zmáčknuté tlačítko zároveň musí mít nejnižší hodnotu, proto tedy v dvojkovém zápisu čísla $n$ to musí být ta jednička s nejnižší hodnotou (least significant bit). Nechť se tato jednička nachází na $k$-tém místě. Pak musíme nějakým způsobem vyjádřit číslo $n - 2^k$ pomocí sudému počtu tlačítek, což umíme právě jedním způsobem. A protože u čísla $n - 2^k$ tlačítko $k$ mačkat nebudeme, jediný způsob, jak se dostat do patra $n$ lichým počtem stisků tlačítek, je dostat se do patra $n - 2^k$ sudým počtem způsobů a pak zmáčkneme tlačítko $k$.
+
+Tím jsme dokázali, že se do patra $n$ umíme právě dvěma způsoby (se sudým počtem stisků a lichým počtem stisků). Q. E. D.
+
+\end{document}
