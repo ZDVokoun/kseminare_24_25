@@ -1,0 +1,46 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{2}
+\problem{1} 
+
+\begin{document}
+
+Pokud by $k > 4$, pak rovnice:
+
+\[
+	4n^3 + 3n^2 - n \equiv 0 \pmod{k}
+\]
+
+By musela mít alespoň $k$ řešení. Tato rovnice je ale kubická, tudíž to pro $k > 4$ nemůže nastat.
+
+Teď tedy rozebereme případy, kdy $k \in \{1;2;3;4\}$. Pro $k = 4$ dostáváme:
+
+\[
+	3n^2 - n \equiv 0 \pmod{4}
+\]
+
+Tato rovnice neplatí pro $n \equiv 3 \pmod{4}$. Pro $k = 3$ dostáváme:
+
+\[
+	n^3 - n \equiv 0 \pmod{3}
+\]
+
+Toto pro všechny zbytky platí, tedy našli jsme řešení $k = 3$. Pro $k = 2$ dostaneme:
+
+\[
+	n^2 - n \equiv 0 \pmod{2}
+\]
+
+Tato platí pro všechny, proto další řešení je $k = 2$. Pak další řešení je zřejmě $k = 1$.
+
+Všechny řešení tedy jsou $k \in \{1;2;3\}$. Q. E. D.
+
+\end{document}

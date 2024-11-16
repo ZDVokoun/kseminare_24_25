@@ -1,0 +1,35 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{2}
+\problem{4} 
+
+\begin{document}
+
+Nejprve vyřešíme případ, kdy $p = 2$. Pak teseraktovými zbytky jsou všechny zbytky (0,1), tedy jejich počet je 2.
+
+Pro zbývající prvočísla si kongruenci ze zadání rozdělíme na následující soustavu:
+
+\[
+	a \equiv y^2 \pmod{b}
+\]
+\[
+	y \equiv x^2 \pmod{b}
+\]
+
+Víme, že počet $a \neq 0$ splňující první kongruenci $\frac{p - 1}{2}$. Číslo $y$ však nemusí být nutně kvadratický zbytek, tudíž druhá kongruence nemusí nutně platit.
+
+Nejprve toto rozebereme pro $p \equiv 3 \pmod{4}$. Pokud je $a$ kvadratický zbytek, existují pak dvě $y = \pm z$, které splňují první kongruenci. Tehdy víme, že pokud $y$ nebyl kvadratický zbytek, pak $-y$ je kvadratický zbytek. Tím pádem buď $z$ nebo $-z$ je nutně kvadratický zbytek, proto počet řešení je tehdy $\frac{p - 1}{2} + 1 = \frac{p + 1}{2}$.
+
+Zbývá nám pak případ, kdy $p \equiv 1 \pmod{4}$. Tehdy ale víme, že existuje $y \in \{1, 2, \dots, \frac{p - 1}{2}\}$ řešící první kongrunci, pokud je $a$ kvadratický zbytek (to platí z rovnice $y^2 = (-y)^2$), a tedy umíme spárovat každé $y$ se svým kvadratickým zbytkem $a$. Zároveň víme, že pokud $y$ byl kvadratický zbytek, pak $-y$ je kvadratický zbytek a naopak pro nezbytky. Tím pádem mezi $y \in \{1, 2, \dots, \frac{p - 1}{2}\}$, je právě polovina kvadratických zbytků a polovina kvadratických nezbytků. Tím pádem počet teseraktových zbytků je v tomto případě $\frac{p - 1}{4} + 1 = \frac{p + 3}{4}$.
+
+Tím jsme vyřešili všechny případy, které mohli nastat. Q. E. D.
+
+\end{document}

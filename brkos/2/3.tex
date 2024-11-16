@@ -1,0 +1,39 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{2}
+\problem{3} 
+
+\begin{document}
+
+Když výraz ze zadání budeme modulit čtyřmi, dostaneme:
+
+\[
+	x \equiv n^{2a} + m^{2b} + 4^c \equiv (n^{a})^2 + (m^{b})^2 \pmod{4}
+\]
+
+Dále si vypíšeme kvadratické zbytky:
+
+\[
+	1^2 \equiv 1 \pmod{4}
+\]
+\[
+	2^2 \equiv 0 \pmod{4}
+\]
+\[
+	3^2 \equiv 1 \pmod{4}
+\]
+\[
+	4^2 \equiv 0 \pmod{4}
+\]
+
+Ale můžeme si všimnout, že aby šlo to číslo zapsat ve tvaru výše, nemůže pro něj platit $x \equiv 3 \pmod{4}$, protože kvadratické zbytky dosahují hodnoty nejvýše $1$. Proto všechny čísla $x \equiv 3 \pmod{4}$ nelze tímto tvarem vyjádřit a těchto čísel je nekonečně mnoho. Q. E. D.
+
+\end{document}

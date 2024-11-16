@@ -1,0 +1,75 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{2}
+\problem{4} 
+
+\begin{document}
+
+Abychom uvážili dobu pádu kapaliny, musíme zjistit, v jaký čas vytekl z kohoutku poslední voda, která stihla dopadnout v čase $t$. Protože doba pádu je $\sqrt{\frac{2h}{g}}$, pak poslední voda vytekla z kohoutku v čase $t - \sqrt{\frac{2 (H - h)}{g}}$ a proto:
+
+\[
+	a^{2} h = Q {\left(t - \sqrt{2} \sqrt{\frac{H - h}{g}}\right)}
+\]
+\[
+	Q t - a^{2} h = Q \sqrt{\frac{2(H - h)}{g}}
+\]
+
+Teď budeme muset umocnit obě strany. Protože to může přinést řešení, které ale jsou neplatná, musíme uhlídat, aby řešení splnilo podmínku $Qt \geq h a^2$. Po umocnění dostaneme kvadratickou rovnici:
+
+\[
+	{\left(Q t - a^{2} h\right)}^{2} = \frac{2 \, Q^{2} (H - h)}{g}
+\]
+\[
+	a^{4} h^{2} + \frac{2 \, Q^{2} h}{g} - 2 \, Q a^{2} h t + Q^{2} t^{2} - \frac{2 \, H Q^{2}}{g} = 0
+\]
+
+Řešením této kvadratické rovnice pak jsou:
+
+\[
+	\left[h = \frac{Q a^{2} g t - Q^{2} - Q \sqrt{2 \, H a^{4} g - 2 \, Q a^{2} g t + Q^{2}} }{a^{4} g}, h = \frac{Q a^{2} g t - Q^{2} + Q \sqrt{2 \, H a^{4} g - 2 \, Q a^{2} g t + Q^{2}} }{a^{4} g}\right]
+\]
+
+Tyto řešení platí pro $t$ v intervalu $\left\langle\sqrt{\frac{2 H}{g}}; \frac{a^2 h}{Q}\right\rangle$, výrazy pod odmocninou budou vždy kladná. Teď musíme zjistit, jaké z těchto řešení je to správné. Nejprve vyzkoušíme první řešení:
+
+\[
+	Q t \geq \frac{Q a^{2} g t - Q^{2} - Q \sqrt{2 \, H a^{4} g - 2 \, Q a^{2} g t + Q^{2}} }{a^{2} g}
+\]
+\[
+	Q t \geq Q t - \frac{Q^{2}}{a^{2} g} - \frac{Q \sqrt{2 \, H a^{4} g - 2 \, Q a^{2} g t + Q^{2}} }{a^{2} g}
+\]
+\[
+	0 \leq \frac{Q^{2}}{a^{2} g} + \frac{Q \sqrt{2 \, H a^{4} g - 2 \, Q a^{2} g t + Q^{2}} }{a^{2} g}
+\]
+
+Tato nerovnost nutně platí, tudíž první řešení je správné. Teď zkusíme druhé řešení:
+
+\[
+	Q t \geq \frac{Q a^{2} g t - Q^{2} + Q \sqrt{2 \, H a^{4} g - 2 \, Q a^{2} g t + Q^{2}} }{a^{2} g}
+\]
+\[
+	Q t \geq Q t - \frac{Q^{2}}{a^{2} g} + \frac{Q \sqrt{2 \, H a^{4} g - 2 \, Q a^{2} g t + Q^{2}} }{a^{2} g}
+\]
+\[
+	\frac{Q^{2}}{a^{2} g} \geq \frac{Q \sqrt{2 \, H a^{4} g - 2 \, Q a^{2} g t + Q^{2}} }{a^{2} g}
+\]
+\[
+	Q^{2} \geq Q \sqrt{2 \, H a^{4} g - 2 \, Q a^{2} g t + Q^{2}}
+\]
+
+Tato nerovnost v čase $t = \sqrt{\frac{2H}{g}}$ neplatí, proto jediné řešení je tedy:
+
+\[
+	h(t) = Q \frac{a^{2} g t + Q - \sqrt{2 \, Q a^{2} g t + Q^{2}} }{a^{4} g}
+\]
+
+kdy $t \in \left\langle\sqrt{\frac{2 H}{g}}; \frac{a^2 h}{Q}\right\rangle$. Pro $t < \sqrt{\frac{2 H}{g}}$ je pak $h(t) = 0$.
+
+\end{document}

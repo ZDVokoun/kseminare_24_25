@@ -1,0 +1,37 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{3p}
+\problem{5} 
+
+\begin{document}
+
+Protože funkce $f$ dělí sudá čísla, dokud se z nich nestanou čísla lichá, má smysl uvažovat jen lichá $k$. Dále budu místo čísla $n$ pracovat s lichým číslem $n'$, pro který platí vztah $n = 2^x \cdot n'$, kde $x \in \mathbb{Z}_0^{+}$.
+
+Teď budu chtít ukázat, že existuje takové číslo $k$ a $y$, že:
+
+\[
+	3 n' k + 1 = 2^y
+\]
+
+Pokud takové číslo $k$ a $y$ existuje, pak v posloupnosti dostaneme mocninu dvojky, která se posléze vykrátí až na jedničku. Takovou rovnici nemůže sudé $k$ splnit, tím pádem jakmile začneme posloupnost číslem $kn$, tak jako první liché číslo v posloupnosti dostaneme $k n'$. Stačí nám tedy ukázat, že existuje $y$ takové, že $3 n' \vert 2^y - 1$.
+
+Toto si nejprve převedeme na kongruenci a upravíme:
+
+\[
+	2^y - 1 \equiv 0 \pmod{3n'}
+\]
+\[
+	2^y \equiv 1 \pmod{3n'}
+\]
+
+Protože víme, že 2 a $3n'$ jsou nesoudělná čísla, z Eulerovy věty pak platí, že tuto kongruenci splňuje $y = \phi(3n')$. Tím jsme dokázali, že vždy existuje číslo $k$ a $y$, které rovnici výše splňuje.
+
+\end{document}

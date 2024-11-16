@@ -1,0 +1,54 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{2}
+\problem{2} 
+
+\begin{document}
+
+Pro poslední dvojčíslí $x$ bude platit:
+
+\[
+	x \equiv 15^{15^{15}} \pmod{100}
+\]
+
+Místo toho, abychom řešili rovnou tuto rovnici, budeme řešit soustavu:
+
+\[
+	x \equiv 15^{15^{15}} \pmod{25}
+\]
+\[
+	x \equiv 15^{15^{15}} \pmod{4}
+\]
+
+První rovnici vyřešíme snadno, jelikož číslo ze zadání je dělitelné 25:
+
+\[
+	x \equiv 15^{15^{15}} \equiv 25 \cdot 5^{15^{15} - 2} \cdot 3^{15^{15}} \equiv 0 \pmod{25}
+\]
+
+Druhou rovnici vyřešíme pomocí binomické věty:
+
+\[
+	x \equiv 15^{15^{15}} \equiv (16 - 1)^{15^{15}} \equiv (-1)^{15^{15}} \equiv -1 \equiv 3 \pmod{4}
+\]
+
+Teď pomocí čínské zbytkové věty vyřešíme rovnici:
+
+\[
+	x \equiv 0 \pmod{25}
+\]
+\[
+	x \equiv 3 \pmod{4}
+\]
+
+Lze tedy vidět, že řešením je $x \equiv 75 \pmod{100}$, tudíž poslední dvojčíslí je 75.
+
+\end{document}

@@ -1,0 +1,29 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{2}
+\problem{B} 
+
+\begin{document}
+
+Ukážu, že pro hráče s modrými kamínky je výherní strategie následující:
+
+\begin{itemize}
+	\item Pokud červený hráč položí kámen, tak modrý hráč taky položí kámen.
+	\item Pokud červený hráč skočí, modrý hráč taky skočí, a to kamenem, který se nacházel těsně za tím, se kterým červený hráč skočil.
+\end{itemize}
+
+Není však zřejmé, že modrý hráč může tuto strategii vždy dodržet, tudíž to budu chtít ukázat. Nejprve nám musí dojít, že oba hráči budou chtít hrát tahy jen na úseku tabulky $1 \times 6$, tedy vyhraje ten hráč, kdo nebude moct už vykonat tah v tomto úseku. Pak budeme chtít indukcí ukázat, že hráč bude vždy moci vykonávat tahy podle této strategie. Spolu s tím ukážeme, že po každém tahu moci párovat červené a modré kameny tak, abychom dostali dvojice kamenů, které spolu sousedí, jsou v pořadí červený kámen, modrý kámen a zároveň červený kámen bude na liché pozici a modrý kámen na sudé pozici. Tímto si pomůžeme při důkazu toho, že modrý hráč bude vždy moci vykonávat tuto strategii.
+
+Po prvních dvou tazích nutně vznikne taková dvojice na začátku tabulky. Teď předpokládejme, že jsme ve stavu hry, kdy můžeme rozdělit tyto kameny na výše popsané dvojice. Pak při přidávání kamenů první volná pozice bude na liché pozici a za touto volnou pozicí bude nutně další volná pozice, proto přidáváním s vždy dostaneme do stavu, kde lze takto kameny párovat. U skákání bude muset červený hráč přeskočit lichý počet kamenů, protože skupina kamenů, kterou přeskakuje, je tvořena z dvojic, a posune tedy kámen o sudou délku. Kámen červeného hráče tedy zase skončí na liché pozici. Za tímto kamenem byl modrý kámen, proto modrý hráč skočí o stejnou vzdálenost. To modrý hráč bude vždycky moci, protože hráči hrají jen v úseku $1 \times 6$ a tedy červený hráč nemůže zabrat poslední pozici. Tím jsme tedy dokázali, že v každém kroku za použití strategie výše můžeme takto párovat červené a modré kameny a spolu s tím to, že modrý hráč vždy bude moci vykonat tah podle této strategie.
+
+Víme z toho tedy, že po každém tahu modrého bude při dodržování této strategie stejný počet červených a modrých kamenů. Tím pádem jakmile se naplní tento úsek, bude na řadě červený hráč a tím pádem prohrál. Proto tato strategie je nutně výherní.
+
+\end{document}

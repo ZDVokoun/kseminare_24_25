@@ -1,0 +1,27 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{3p}
+\problem{1} 
+
+\begin{document}
+
+Jako první vyjádříme funkční hodnotu $f(n)$ modulo pěti a modulo devíti:
+
+\[
+	f(n) \equiv n \pmod{5}
+\]
+\[
+	f(n) \equiv 1 + 2 + \dots + n \equiv \frac{n (n + 1)}{2} \pmod{9}
+\]
+
+Z těchto kongruencí víme, že aby $f(n)$ bylo násobkem 45, musí $5 \vert n$ a buď $9 \vert n$ nebo $n \equiv 8 \pmod{9}$. Nejmenší přirozené číslo, které tyto podmínky splňuje, je $n = 35$. Tím jsme našli řešení úlohy.
+
+\end{document}

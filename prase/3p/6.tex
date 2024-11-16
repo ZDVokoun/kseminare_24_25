@@ -1,0 +1,64 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{3p}
+\problem{6} 
+
+\begin{document}
+
+Pro nedegenerovaný trojúhelník platí, že:
+
+\[
+	\max(a,b,c) \leq s
+\]
+
+kde $s = \frac{a + b + c}{2}$. Důležité je si tedy všimnout, že $s$ se při vytváření nových trojúhelníků nemění:
+
+\[
+	s = \frac{(a + b - c) + (a + c - b) + (b + c - a)}{2} = \frac{a + b + c}{2}
+\]
+
+Číslo $s$ tedy zůstává konstantní, proto budeme chtít určit typ trojúhelníku, u kterého nejdelší strana nebude růst.
+
+Bez újmy na obecnosti předpokládejme, že $a \geq b \geq c$. Pak nám vychází čtyři možné případy, které nám mohou pro trojúhelníky nastat, a to $a > b > c$, $a = b = c$, $a > b = c$, $a = b > c$.
+
+Začneme nejprve případem, kdy $a > b > c$. Uspořádání nových hran pak bude:
+
+\[
+	a + b - c > a + c - b > b + c - a
+\]
+
+Z toho víme, že nová nejdelší strana má délku $a + b - c > a$, tedy nejdelší strana se nám prodlužuje. Protože trojúhelník zůstal různostranný, jeho nejdelší strana se bude pořád prodlužovat, proto jednou zdegeneruje.
+
+Dalším případem je $a = b = c$. Pak zase dostaneme rovnostranný trojúhelník, protože:
+
+\[
+	a + b - c = a + c - b = b + c - a = a = b = c
+\]
+
+Dostaneme tedy tentýž trojúhelník, takže ten můžeme kreslit do nekonečna.
+
+Teď nám zbývají poslední dva případy, kdy máme rovnoramenné trojúhelníky. Začneme nejprve případem, kdy $a = b > c$. Tehdy se uspořádání změní:
+
+\[
+	a + b - c > c = a + c - b = b + c - a
+\]
+
+V tomto případě se nejdelší strana prodlouží, ale změní se nám uspořádání. To vyřešíme tím, že rozebereme poslední případ, který má totožné uspořádání, a to $a > b = c$:
+
+\[
+	a = a + b - c = a + c - b > b + c - a
+\]
+
+Tehdy nejdelší hrana zůstane stejně dlouhá, ale změní se uspořádání na případ, kdy $a = b > c$, při kterým nejdelší hrana se prodlouží. Proto i pro rovnoramenné trojúhelníky nelze kreslit trojúhelníky do nekonečna.
+
+Tím jsme tedy ukázali, že do nekonečna může kreslit jen rovnostranné trojúhelníky. Q. E. D.
+
+\end{document}

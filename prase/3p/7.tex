@@ -1,0 +1,48 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{3p}
+\problem{7} 
+
+\begin{document}
+
+Jako první ukážeme, že neexistuje $n$ a $k$, pro které $n = f^k(n)$. Tehdy pak nutně platí, že $n = f^k(n) = f^{2k}(n) = f^{3k}(n) = \dots$, a bylo by nekonečně mnoho $k \in \mathbb{N}$ splňující $f^k(n) \leq n + k + 1$. Toto ale porušuje podmínku ze zadání, tudíž takové $n$ a $k$ nemůže existovat.
+
+Dále ukážeme, že neexistuje $n$, pro který $f(n) < n$. Tehdy je nutně $f(n) \leq n + 2$, tedy pro všechna $k > 1$ platí $f^k(n) > n + k + 1$. Máme tedy splněnou podmínky pro $n$, ale snadno ukážeme, že podmínky nelze splnit pro $f(n)$:
+
+\[
+	f^k(n) = f^{k - 1}(f(n)) > n + k + 1 > f(n) + (k - 1) + 1
+\]
+
+Z této nerovnosti je zřejmé, že pro $f(n)$ jsou všechna $f^k(f(n)) > f(n) + k + 1$, což je ale spor s podmínkou ze zadání, čímž jsme dokázali, že neexistuje $n$, pro které $f(n) < n$.
+
+Z toho už víme, že posloupnost $n, f(n), f^2(n), \dots$ je rostoucí. Toho využijeme k důkazu, že pro každé $n$ je jediným řešením $f^k(n) \leq n + k + 1$ číslo $k = 1$. Pokud by to totiž neplatilo, pak zároveň $f^{k - 1}(n) > n + k$, což z toho spolu s tím, že $f^{k - 1}(n) < f^k(n)$, vyplývá:
+
+\[
+	n + k < f^{k - 1}(n) < f^k(n) \leq n + k + 1
+\]
+
+V přirozených číslech tato nerovnice nemá řešení, proto tedy jediným řešením $f^k(n) \leq n + k + 1$ je číslo $k = 1$.
+
+Teď máme dost informací na to, abychom odvodili předpis funkcí $f$. Víme, že pro každé $n$ platí $f(n) \leq n + 2$, $f^2(n) > n + 3$, $f(f(n)) \leq f(n) + 2$. Z toho zjistíme funkci $f^2(n)$:
+
+\[
+	n + 3 < f^2(n) \leq f(n) + 2 \leq n + 4
+\]
+
+Tím pádem $f^2(n) = n + 4$. Teď už potřebujeme jen zjistit $f(n)$:
+
+\[
+	f^2(n) - 2 \leq f(n) \leq n + 2
+\]
+
+A proto jediná funkce, která splňuje zadání, je $f(n) = n + 2$. Tím je tedy důkaz u konce.
+
+\end{document}
