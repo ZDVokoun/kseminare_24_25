@@ -1,0 +1,62 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{2}
+\problem{1} 
+
+\begin{document}
+
+Grafické karty studenta za rok spotřebují tolik energie:
+
+\[
+	E = P \cdot t = "26280 kWh"
+\]
+
+Aby se mu těžení bitcoinu vyplatilo, musí platit nerovnost:
+
+\[
+	0{,}2 c > 1000 k + E c_z
+\]
+
+kde $c$ je cena bitcoinu, $c_z$ je cena energie a $k$ je počet pořízených stromů.
+
+Jako první vyřešíme uhlí. Při něm jsou roční emise:
+
+\[
+	e_u = 0{,}82 E = "21549{,}6 kg"
+\]
+
+Počet stromů pak je:
+
+\[
+	k_u = \left\lceil \frac{e_u}{25} \right\rceil = 862
+\]
+
+A tedy pro cenu bitcoinu platí:
+
+\[
+	c > 5 \cdot (1000 k_u + E c_u) = "5009048 \text{Kč}"
+\]
+
+Pro vodní elektrárnu bude postup analogický:
+
+\[
+	e_v = 0{,}012 E = "315.36 kg"
+\]
+\[
+	k_v = \left\lceil \frac{e_v}{25} \right\rceil = 13
+\]
+\[
+	c > 5 \cdot (1000 k_v + E c_v) = "590600 \text{Kč}"
+\]
+
+Pro vodní elektrárnu je cena, při které se těžění vyplatí, až o řád menší. Tím je tedy úloha vyřešena.
+
+\end{document}

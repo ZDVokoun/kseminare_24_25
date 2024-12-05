@@ -1,0 +1,62 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{}
+\problem{6} 
+
+\begin{document}
+
+Z toho, že budeme měřit ohniskovou vzdálenost spojné čočky, víme, že budou platit následující rovnice ($a$ je předmětová a $a'$ je obrazová vzdálenost):
+
+\[
+	l = a + a'
+\]
+\[
+	\frac{1}{f} = \frac{1}{a} + \frac{1}{a'}
+\]
+
+Kombinací těchto dvou rovnic dostaneme rovnici kvadratickou, kterou vyřešíme:
+
+\[
+	\frac{1}{f} = \frac{1}{a} + \frac{1}{l - a}
+\]
+\[
+	a (l - a) = f l
+\]
+\[
+	- a^2 + a l - fl = 0
+\]
+\[
+	a_1 = \frac{l - \, \sqrt{l^{2}-4 \, f l}}{2} \qquad a_2 = \frac{l + \, \sqrt{l^{2} - 4 \, f l}}{2}
+\]
+
+Z řešení $a_1$ vidíme, že $l^2 - 4 fl \geq 0$, a tedy:
+
+\[
+	\frac{l}{f} \geq 4
+\]
+
+Obě řešení jsou jinak nutně kladná, protože $l > \sqrt{l^2 - 4 f l}$.
+
+Pro důkaz vzorce ze zadání nejprve dosadíme námi nalezená řešení do $d$:
+
+\[
+	d = |a_1 - a_2| =  \left| \frac{l - \, \sqrt{l^{2}-4 \, f l}}{2} - \frac{l + \, \sqrt{l^{2} - 4 \, f l}}{2} \right| = \sqrt{l^{2} - 4 \, f l}
+\]
+
+Následně ji dosadíme do výrazu $\frac{l^2 - d^2}{4l}$:
+
+\[
+	\frac{l^2 - d^2}{4l} = \frac{l^2 - (l^{2} - 4 \, f l)}{4l} = \frac{4fl}{4l} = f
+\]
+
+Čímž jsme vzorec ze zadání dokázali. Tím jsme dokončili teoretickou část.
+
+\end{document}

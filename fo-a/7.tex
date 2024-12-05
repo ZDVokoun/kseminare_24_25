@@ -1,0 +1,107 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{}
+\problem{7} 
+
+\renewcommand{\d}{\mathrm{d}}
+
+\begin{document}
+
+Jako první vyjádříme přímku procesu, a to vůči $V_0$ a $p_0$. Víme, že proces bude vyjádřen rovnicí:
+
+\[
+	p = k x V_0 + l
+\]
+
+Z úseku $p_0$ víme, že $l = p_0$, a pak následně z úseku $V_0$ zjistíme $k = - \frac{p_0}{V_0}$. Tedy rovnice je:
+
+\[
+	p = p_0 (1 - x)
+\]
+
+Pro teplotu $T$ víme, že platí:
+
+\[
+	\frac{p_A V_A}{T_A} = \frac{p V}{T}
+\]
+\[
+	\frac{\frac{3}{4} p_0 \cdot \frac{1}{4} V_0}{T_A} = \frac{x (1 - x) p_0 V_0}{T}
+\]
+\[
+	3 T = 16 x (1 - x) T_A
+\]
+\[
+	T = \frac{16 x (1 - x) T_A}{3}
+\]
+
+Dále potřebujeme zjistit látkové množství $n$:
+
+\[
+	p_A V_A = n R T_A
+\]
+\[
+	\frac{3}{16} p_0 V_0 = n R T_A
+\]
+\[
+	n = \frac{3 p_0 V_0}{16 R T_A}
+\]
+
+Když teď zjistíme změnu vnitřní energie plynu a práci vykonanou plynem, z prvního termodynamického zákona zjistíme teplo. Proto jako první zjistíme změnu vnitřní energie:
+
+\[
+	\Delta U(x) = n C_{Vm} (T - T_A) = \frac{3 p_0 V_0}{16 R T_A} \cdot \frac{5R}{2} \cdot \left(\frac{16 x (1 - x) T_A}{3} - T_A\right) = \frac{5 p_0 V_0 (16 x (1 - x) - 3)}{32}
+\]
+
+Práce konaná na plynu je:
+
+\[
+	W(x) = - \int_{V_A}^V p \, \d V = - \int_{1/4}^x p V_0 \, \d x= - V_0 p_0 \int_{1/4}^x (1-x) \, \d x
+\]
+\[
+	= - V_0 p_0 \left(- \frac{1}{2} x^2 + x + \frac{1}{2} \cdot \frac{1}{16} - \frac{1}{4}\right) = \frac{V_0 p_0 \left(16 x^2 - 32 x + 7\right)}{32}
+\]
+
+A teď umíme tedy zjistit teplo, který vejde do plynu:
+
+\[
+	Q(x) = \Delta U(x) - W(x) = \frac{5 p_0 V_0 (16 x (1 - x) - 3)}{32} - \frac{V_0 p_0 \left(16 x^2 - 32 x + 7\right)}{32} = \frac{p_0 V_0 (-96 x^2 + 112x - 22)}{32}
+\]
+
+Víme, že pro $V$, $V_A \leq V \leq V_C$, bude přijaté teplo během přechodu $V_A \to V$ hodnota $Q(x)$ růst, ale naopak pro $V$, $V_C \leq V \leq V_B$ bude $Q(x)$ klesat. Proto nám stačí najít maximum funkce $Q(x)$ pomocí derivací:
+
+\[
+	(Q(x))' = 0
+\]
+\[
+	\left( \frac{p_0 V_0 (-96 x^2 + 112x - 22)}{32} \right)' = 0
+\]
+\[
+	-192x_C + 112 = 0
+\]
+\[
+	x_C = \frac{7}{12}
+\]
+
+Poněvadž tento výsledek se nachází v povoleném rozmezí $\frac{1}{4} \leq x_C \leq \frac{3}{4}$, platí tedy $V_C = \frac{7}{12} V_0$.
+
+Přijaté teplo $Q_p$ je pak:
+
+\[
+	Q_p = Q(x_C) = \frac{32}{3} \cdot \frac{p_0 V_0}{32} = \frac{p_0 V_0}{3}
+\]
+
+Pro vydané teplo $Q_v$ pak platí:
+
+\[
+	Q_v = Q_p - Q(x_B) = \frac{p_0 V_0}{3} - 8 \cdot \frac{p_0 V_0}{32} = \frac{p_0 V_0}{12}
+\]
+
+\end{document}
