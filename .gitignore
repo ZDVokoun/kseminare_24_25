@@ -4,5 +4,7 @@
 *.in
 *.csv
 */ksp-klient.py
-*/a.out
+a.out
 */in.txt
+__pycache__
+

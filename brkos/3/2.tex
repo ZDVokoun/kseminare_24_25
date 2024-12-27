@@ -1,0 +1,41 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dd}{\mathrm{d}}
+\renewcommand{\angle}{\sphericalangle}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{3}
+\problem{2} 
+
+\begin{document}
+
+Víme, že v aby šel strom jednou ukončit, musí být počet větví dělitelný třemi. Víme, že pokud počet větví v jednom stavu je $y + 2v + 3e$, kde $y$ je počet větví, na které dáme Y, $2v$ je počet větví, na které dáme V, a kde $3e$ je počet větví, na které dáme E, pak počet větví v dalším patře bude $2y + v$. Budeme chtít tedy rozhodnout, zda můžeme přidat písmena takovým způsobem, že získáme počet větví dělitelný třemi.
+
+Přepokládejme, že to jde, a tedy $3 \mid 2y + v$. Pro počet větví ve stavu před přidáním patra platí:
+
+\[
+  y + 2v + 3e \equiv y + 2v \equiv x \pmod{3}
+\]
+
+kde $x$ je nenulový zbytek po dělení třemi. Z předpokladu pak platí:
+
+\[
+  y + 2v \equiv 2y + v + v - y \equiv v - y \equiv x \pmod{3}
+\]
+
+Což ale je ve sporu s předpokladem níže, jak uvidíme po dosazení do našeho předpokladu:
+
+\[
+  2y + v \equiv 3y + v - y \equiv v - y \equiv x \pmod{3}
+\]
+
+Tím jsme došli ke sporu a tedy strom nemůžeme nikdy ukončit.
+
+\end{document}

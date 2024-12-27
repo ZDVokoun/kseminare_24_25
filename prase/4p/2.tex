@@ -1,0 +1,45 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dd}{\mathrm{d}}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{4p}
+\problem{2} 
+
+\begin{document}
+
+Let $x_i$ be the number on a clock at position of number $i \in \{1, 2, \dots, 12\}$ on a ordinary clock, $y_i = (x_i + x_{i+1}) \mod 13$ for $i \in \{1, 2, \dots, 11\}$ and $y_{12} = (x_{12} + x_1) \mod 13$ and $s = y_1 + y_2 + \dots + y_{12}$. Then we know that:
+
+\[
+  s \equiv y_1 + y_2 + \dots + y_{12} \equiv 2 (x_1 + x_2 + \dots + x_{12}) \equiv 12 \cdot 13 \equiv 0 \pmod{13}
+\]
+
+Consequently, if we show that there exists a solution when $s = 13$ and that there is no solution for $s = 0$, the smallest possible sum is $s = 13$. For $s = 13$, the solution is:
+
+\[
+  (x_1, x_2, \dots, x_{12}) = (1, 12, 2, 11, 3, 10, 4, 9, 5, 8, 6, 7)
+\]
+
+However, if $s = 0$, then every $y_{i} = 0$, thus:
+
+\[
+  y_i \equiv y_{i + 1} \pmod{13}
+\]
+\[
+  x_i + x_{i + 1} \equiv x_{i + 1} + x_{i + 2} \pmod{13}
+\]
+\[
+  x_i \equiv x_{i + 2} \pmod{13}
+\]
+
+This holds iff $x_i = x_{i + 2}$ which is a contradiction. Hence, the smallest value Sylva can find is $s = 13$.
+
+\end{document}
+

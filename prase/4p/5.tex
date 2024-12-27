@@ -1,0 +1,34 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dd}{\mathrm{d}}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{4p}
+\problem{5} 
+
+\begin{document}
+
+Let the suites be represented by numbers 1,2,3,4 and suppose that the first 4 cards at the bottom are at order 1,2,3,4 from bottom to top. Then it is obvious that the order of the suites from bottom to top is:
+
+\[
+  1, 2, 3, 4, 1, 2, 3, 4, \dots, 1, 2, 3, 4
+\]
+
+Moreover, the quadruplets made only of the inserted cards or only of the cards left in the deck contain all four distinct suites and at most two quadruplets overlap both the inserted cards and the cards left. Therefore, it is only necessary to describe cases when only one quadruplet contains both inserted and intacted cards and when two quadruplets like this exist.
+
+To prove the first case, we have to realise that the number of suites does not change during the operation. With all other quadruplets already containing all distinct suites and each suite having the same number of cards, all quadruplets satisfy the conditions in this case.
+
+In the second case, we only have to prove that one of the two quadruplets satisfy the conditions because then we can use the same argument as in the first case. As these quadruplets are made out of both the inserted cards and the cards left, only these cards can make the lower one of the two quadruplets: (1,4,3,2), (1,2,4,3), (1,2,3,4). As we can see, each of the arrangements satisfies the conditions. Thus, we can now finish the proof of this case by using the same argument as for the first case.
+
+As we have proved all possible cases, the proof is complete.
+
+
+\end{document}
+

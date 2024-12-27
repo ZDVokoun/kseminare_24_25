@@ -1,0 +1,255 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dd}{\mathrm{d}}
+\renewcommand{\angle}{\sphericalangle}
+\newcommand*{\vertbar}{\rule[-1ex]{0.5pt}{2.5ex}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{3}
+\problem{2} 
+
+\begin{document}
+
+\section{Úloha 1}
+
+Abychom našli požadované rovnice, musíme najít řešení soustavy rovnic níže:
+
+\[
+  6 a - 3 b + 2 c = 0
+\]
+\[
+  -4 a + 5 b - 5 c = 0
+\]
+\[
+  0 a - 9 b + 11 c = 0
+\]
+
+Pro to nám stačí najít RREF matice níže:
+
+\[
+  \left(
+  \begin{array}{ccc|c}
+    6 & -3 & 2 & 0 \\
+    -4 & 5 & -5 & 0 \\
+    0 & -9 & 11 & 0 \\
+  \end{array}
+  \right) \sim \left(
+  \begin{array}{ccc|c}
+    1 & 0 & -\frac{5}{18} & 0 \\
+    0 & 1 & -\frac{11}{9} & 0 \\
+    0 & 0 & 0 & 0 \\
+  \end{array}
+  \right)
+\]
+
+Tudíž $c \neq 0$ je parametr a $b = \frac{11}{9} c$ a $a = \frac{5}{18} c$. Z toho získáme:
+
+\[
+  \frac{5}{18} c x + \frac{11}{9} c y + c z = 0
+\]
+\[
+  \frac{5}{18} x + \frac{11}{9} y + z = 0
+\]
+
+Získali jsme tedy rovnici roviny, ve které vektory leží.
+
+\section{Úloha 2}
+
+Víme, že když jsou generátory lineárně závislé, pak jeden z vektorů $\mathbf{v_i}$ lze vyjádřit jako:
+
+\[
+  \mathbf{v_i} = \alpha_1 \mathbf{v_1} + \dots + \alpha_{i - 1} \mathbf{v_{i - 1}} + \alpha_{i + 1} \mathbf{v_{i + 1}} + \dots + \alpha_k \mathbf{v_k}
+\]
+
+Kde alespoň některé koeficienty $\alpha_1, ..., \alpha_k$ jsou nenulové. Pak můžeme vyjádřit nulový vektor i jako:
+
+\[
+  \mathbf{0} = \alpha_1 \mathbf{v_1} + \dots + \alpha_{i - 1} \mathbf{v_{i - 1}} - \mathbf{v_i} + \alpha_{i + 1} \mathbf{v_{i + 1}} + \dots + \alpha_k \mathbf{v_k}
+\]
+
+Tedy lineární kombinaci výše můžeme přičítat k vektoru ve $\text{span} G$ a dostaneme tentýž vektor. Tím jsme dokázali opačnou implikaci.
+
+\section{Úloha 3}
+
+Pro první množinu můžeme využít toho, že vektorový součin je definovaný ve vektorovém prostoru $\mathbb{R}^3$. Tedy řešením je:
+
+\[
+  M = \left\{
+    \begin{pmatrix}
+      2 \\ -3 \\ 6
+    \end{pmatrix}
+    ,
+    \begin{pmatrix}
+      -1 \\ 2 \\ -4
+    \end{pmatrix}
+    ,
+    \begin{pmatrix}
+      2 \\ -3 \\ 6
+    \end{pmatrix} 
+    \times
+    \begin{pmatrix}
+      -1 \\ 2 \\ -4
+    \end{pmatrix}
+    \right\} =
+  \left\{
+    \begin{pmatrix}
+      2 \\ -3 \\ 6
+    \end{pmatrix}
+    ,
+    \begin{pmatrix}
+      -1 \\ 2 \\ -4
+    \end{pmatrix}
+    ,
+    \begin{pmatrix}
+      0 \\ 2 \\ 1
+    \end{pmatrix} 
+    \right\}
+\]
+
+U druhé množiny dokážeme, že můžeme přidat vektory $(0,0,1,0)$ a $(0,0,0,1)$. Tyto dva vektory jsou zřejmě na sobě nezávislý. Pak pokud je první vektor lineárně závislý na vektorech množiny $M$, musí matice níže mít řešení:
+
+\[
+  \left(
+  \begin{array}{cc|c}
+    2 & 2 & 0 \\
+    4 & 2 & 0 \\
+    8 & 3 & 1 \\
+    1 & -10 & 0 \\
+  \end{array}
+  \right) \sim \left(
+  \begin{array}{cc|c}
+    2 & 2 & 0 \\
+    2 & 0 & 0 \\
+    8 & 3 & 1 \\
+    1 & -10 & 0 \\
+  \end{array}
+  \right) \sim \left(
+  \begin{array}{cc|c}
+    1 & 0 & 0 \\
+    0 & 2 & 0 \\
+    0 & 3 & 1 \\
+    0 & -10 & 0 \\
+  \end{array}
+  \right) \sim \left(
+  \begin{array}{cc|c}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 1 \\
+    0 & 0 & 0 \\
+  \end{array}
+  \right)
+\]
+
+Tedy vektor $(0,0,1,0)$ je opravdu nezávislý. Stejně to uděláme pro druhý vektor:
+
+\[
+  \left(
+  \begin{array}{cc|c}
+    2 & 2 & 0 \\
+    4 & 2 & 0 \\
+    8 & 3 & 0 \\
+    1 & -10 & 1 \\
+  \end{array}
+  \right) \sim \left(
+  \begin{array}{cc|c}
+    1 & 0 & 0 \\
+    0 & 2 & 0 \\
+    0 & 3 & 0 \\
+    0 & -10 & 1 \\
+  \end{array}
+  \right) \sim \left(
+  \begin{array}{cc|c}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 0 \\
+    0 & 0 & 1 \\
+  \end{array}
+  \right) 
+\]
+
+Tedy jsme ukázali, že oba tyto vektory jsou nezávislé na zbytku, tedy je lze doplnit do množiny $M$.
+
+\section{Úloha 4}
+
+Víme, že vektor $\mathbf{w}$ je lineární kombinací generátorů, tedy:
+
+\[
+  \mathbf{w} = \alpha_1 \mathbf{v_1} + \alpha_2 \mathbf{v_2} + \dots +\alpha_n \mathbf{v_n}
+\]
+
+kde existuje $\alpha_k \neq 0$. Pak když vyměníme $\mathbf{v_k}$ za $\mathbf{w}$, umíme vyjádřit $\mathbf{v_k}$ jako:
+
+\[
+  \mathbf{v_k} = -\frac{\alpha_1}{\alpha_k} \mathbf{v_1} - \frac{\alpha_2}{\alpha_k} \mathbf{v_2} - \dots - \frac{\alpha_n}{\alpha_k} \mathbf{v_n} - \frac{1}{\alpha_k} \mathbf{w}
+\]
+
+Tedy když máme nějakou lineární kombinaci vektoru v $P$, stačí nám do ní dosadit $\mathbf{v_k}$, abychom dostali lineární kombinaci s novými generátory, tedy nová množina generátorů generuje $P$.
+
+\section{Úloha 5}
+
+Pokud budeme vektory $\mathbf{u_1}$, $\mathbf{u_2}$, ..., $\mathbf{u_m}$ přidávat po jednom, můžeme použít lemma o výměně. Z lemmatu o výměně víme, že v každém kroku, kdy provádíme výměnu s nějakým generátorem, existuje generátor, se kterým lze vektor vyměnit, a tedy tuto výměnu provedeme. Zbývá tedy dokázat, že vždy budeme moci tyto vektory vyměnit s původními generátory.
+
+Pokud by v nějakém kroku nastalo, že by nějaký vektor $\mathbf{u_i}$ šel vyměnit jen s vektory $\mathbf{u_1}$, ..., $\mathbf{u_{i - 1}}$, znamenalo by to, že $\mathbf{u_i}$ lze vyjádřit jako lineární kombinace těchto vektorů. To je však spor s tím, že tyto vektory jsou lineárně nezávislé, a tedy vždy budeme moci tyto vektory vyměnit s původními generátory. Tím jsme dokázali Steinitzovu větu o výměně.
+
+\section{Úloha 6}
+
+Většinou budeme znát vyjádření bazických vektorů v kanonické bázi, proto tedy budeme schopni pro báze $B$,$C$ snadno zkonstruovat matice $_{\text{kan}}[\mathbf{id}]_B$ a $_{\text{kan}}[\mathbf{id}]_C$, jelikož sloupce těchto matic odpovídají bazickým vektorům báze $B$, resp. $C$. A protože $_{\text{kan}}[\mathbf{id}]_B \cdot _{B}[\mathbf{id}]_{\text{kan}} = _{\text{kan}}[\mathbf{id}]_B \cdot (_{\text{kan}}[\mathbf{id}]_B)^{-1} = \mathbf{I}$, umíme získat převody z kanonické báze na báze $B$ nebo $C$ inverzí převodů z bází $B$,$C$ do kanonické. Tedy:
+
+\[
+  _B[\mathbf{id}]_C = _B[\mathbf{id}]_{\text{kan}} \cdot _{\text{kan}}[\mathbf{id}]_C = 
+\left(
+  \begin{array}{cccc}
+    \vertbar & \vertbar &        & \vertbar \\
+    \mathbf{b_{1}}    & \mathbf{b_{2}}    & \ldots & \mathbf{b_{n}}    \\
+    \vertbar & \vertbar &        & \vertbar 
+  \end{array}
+\right)^{-1} \cdot 
+\left(
+  \begin{array}{cccc}
+    \vertbar & \vertbar &        & \vertbar \\
+    \mathbf{c_{1}}    & \mathbf{c_{2}}    & \ldots & \mathbf{c_{n}}    \\
+    \vertbar & \vertbar &        & \vertbar 
+  \end{array}
+\right)
+\]
+\[
+  _C[\mathbf{id}]_B = _C[\mathbf{id}]_{\text{kan}} \cdot _{\text{kan}}[\mathbf{id}]_B = 
+\left(
+  \begin{array}{cccc}
+    \vertbar & \vertbar &        & \vertbar \\
+    \mathbf{c_{1}}    & \mathbf{c_{2}}    & \ldots & \mathbf{c_{n}}    \\
+    \vertbar & \vertbar &        & \vertbar 
+  \end{array}
+\right)^{-1}
+\cdot 
+\left(
+  \begin{array}{cccc}
+    \vertbar & \vertbar &        & \vertbar \\
+    \mathbf{b_{1}}    & \mathbf{b_{2}}    & \ldots & \mathbf{b_{n}}    \\
+    \vertbar & \vertbar &        & \vertbar 
+  \end{array}
+\right)
+\]
+
+\section{Úloha 7}
+
+Nechť $\mathbf{u} = (2, 0, -1)^{\top}$. Jedna z podprostorů je určitě $\text{span}(\{\mathbf{u}\})$, což je taky jediný jednodimenzionální podprostor obsahující tento vektor. Pak pro dvojrozměrné pak můžeme každý podprostor vyjádřit jako $\text{span}(\{\mathbf{u}, \mathbf{v}\})$, kde $\mathbf{v} \in \mathbb{R}^3 \setminus \{k \mathbf{u}; k \in \mathbb{R}\}$, tedy vektor $\mathbf{v}$ je jakýkoli vektor, který je lineárně nezávislý na $\mathbf{u}$. Zbývají teď třírozměrné podprostory, z nichž jediná je $\mathbb{R}^3$.
+
+\section{Úloha 8}
+
+Nejprve dokážu, že celá čísla $\mathbb{Z}$ se sčítáním a násobením nejsou těleso. Pokud by se totiž jednalo o těleson, pak pro každé celé číslo $x$ existuje takové $y$, že $x \cdot y = 1$, což ale zřejmě není pravda (stačí zkusit třeba za $x$ dosadit 2). Proto $\mathbb{Z}^n$ nad $\mathbb{Z}$ není lineární prostor.
+
+Protože množiny $\Q^n$ nad $\Q$ a $\R^n$ nad $\Q$ splňují všechna pravidla lineárního prostoru a její operace jsou uzavřené, jedná se o lineární prostory. Avšak množina $\Q^n$ nad $\R$ není uzavřená množina, proto se o lineární prostor nejedná (stačí např. vynásobit vektor číslem $\pi$).
+
+
+
+\end{document}

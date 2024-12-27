@@ -1,0 +1,49 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dd}{\mathrm{d}}
+\renewcommand{\angle}{\sphericalangle}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{3}
+\problem{B} 
+
+\begin{document}
+
+Rovnice $ax^2 + 3x + c (1 - c) = 0$ bude mít právě jedno řešení právě tehdy, když diskriminant této rovnice bude nulový:
+
+\[
+  3^2 - 4 \cdot a c (1 - c) = 0
+\]
+
+Získáme z toho rovnici, kde musíme zjistit, zda existuje řešení $c$:
+
+\[
+  9 = 4 a c (1 - c)
+\]
+\[
+  \frac{9}{4a} = c - c^2
+\]
+\[
+  c^2 - c + \frac{9}{4a} = 0
+\]
+
+Tato rovnice má řešení v reálných číslech právě tehdy, když diskriminant je nezáporný:
+
+\[
+  1 - 4 \cdot \frac{9}{4a} \geq 0
+\]
+\[
+  1 \geq \frac{9}{a}
+\]
+
+Toto zřejmě platí pro všechna záporná $a$ a pro $a \geq 9$, ve zbylých intervalech rovnice neplatí nebo je pravá strana nedefinována. Proto pro $a \in (- \infty; 0) \cup \langle9; \infty)$ řešení $c$ existuje a pro zbytek nikoli.
+
+
+\end{document}

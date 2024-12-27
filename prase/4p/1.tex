@@ -1,0 +1,24 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dd}{\mathrm{d}}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{4p}
+\problem{1} 
+
+\begin{document}
+
+Firstly, we have $n - 3$ pigs whose arrangement is not constrained in any way, therefore, the number of arrangements of these pigs is $(n - 3)!$. After we have these pigs arranged, we get the number of possible arrangements satisfying constraints by inserting the remaining three pigs between other pigs or at the start or the end of the line. Thus, we have $n - 2$ slots where the remaining pigs can be inserted. However, each of the slots can be used only once. Hence, the result is:
+
+\[
+  (n - 3)! \cdot (n - 2) (n - 3) (n - 4) = \frac{(n - 2)! (n - 3)!}{(n - 5)!}
+\]
+
+\end{document}

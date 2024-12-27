@@ -1,0 +1,32 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dd}{\mathrm{d}}
+\renewcommand{\angle}{\sphericalangle}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{4p}
+\problem{3} 
+
+\begin{document}
+
+We know that each combination of three points lay on a line or form a triangle. Therefore, considering some points $A$, $B$, $C$, we know that:
+
+\[
+  |\angle ABC| + |\angle BCA| + |\angle CAB| = 180^{\circ}
+\]
+\[
+  |\angle CBA| + |\angle BAC| + |\angle ACB| = 180^{\circ}
+\]
+
+Thus, the average these angles is $60^{\circ}$ and when doing this for all combinations of three points we will get identical result. Consequently, the average number will be $60^{\circ}$ because by doing this we cover all possible ordered triplets.
+
+
+
+\end{document}

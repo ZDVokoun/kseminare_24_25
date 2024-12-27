@@ -1,0 +1,45 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dd}{\mathrm{d}}
+\renewcommand{\angle}{\sphericalangle}
+\newcommand{\lcm}{\text{lcm}}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{3}
+\problem{4} 
+
+\begin{document}
+
+Pokud ukážeme, že pro každý pár $a,b$ platí, že $a + b \leq \lcm (a,b) + \gcd(a,b)$, součet se nikdy nezmenší. A protože původní součet je $\frac{2025 \cdot 2024}{2} > 2 \cdot 10^6$, bude nutně platit podmínka ze zadání.
+
+Protože $a b = \lcm (a,b) \cdot \gcd(a,b)$, po dosazení dostaneme:
+
+\[
+  a + b \leq \frac{a b}{\gcd (a,b)} + \gcd(a,b)
+\]
+
+Když provedeme substituci $x = \gcd(a,b)$, postupnými úpravami dostaneme:
+
+\[
+  a + b \leq \frac{ab}{x} + x
+\]
+\[
+  x (a + b) \leq ab + x^2
+\]
+\[
+  x^2 - (a + b) x + ab \geq 0
+\]
+\[
+  (x - a)(x - b) \geq 0
+\]
+
+Tato rovnice nebude platit jedině tehdy, když $\min(a,b) < \gcd(a,b) < \max(a,b)$, což ale nikdy nemůže nastat, protože $\gcd(a,b) \leq \min(a,b)$ (to vyplývá ze samotné definice nejmenšího společného dělitele). Tím jsme dokázali, že tato nerovnice vždy platí a tedy i tvrzení ze zadání.
+
+\end{document}

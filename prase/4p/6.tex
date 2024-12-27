@@ -1,0 +1,27 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dd}{\mathrm{d}}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{4p}
+\problem{6} 
+
+\begin{document}
+
+It is obvious that for every $k \leq 1000$ Majda cannot always win because Vašek is always able to cancel out every move Majda makes by choosing the numbers Majda has rearranged plus some more which he will leave in place. Therefore, let's consider only the cases where $k = 1002$ and $k = 1001$.
+
+Regarding the case where $k = 1002$, Majda can always win. The winning strategy is as follows: firstly, she swaps pairs (1,2000), (2,1999), etc. Then, after each Vašek's move, she can always revert his move and swap another pair. The reason is that to revert Vašek's move she needs to choose the 1000 numbers he rearranged and then she can choose two more numbers if necessary. Thus, she can win after a finite number of turns in this case.
+
+Now, I will show that for the case where $k = 1001$ there is no winning strategy for Majda. After each Majda's move, Vašek is always capable of ensuring that Majda will gain at most one correctly placed number after each turn (he rearranges the correctly placed numbers). Moreover, every move at which Majda moves with numbers already in the correct places is not beneficial for her. Hence, when the game approaches the end, it will certainly end at the state when 998 numbers are correctly placed because at this point there will remain one pair of numbers to be corrected after each Majda's turn. Therefore, Vašek can always keep the game at this state infinitely and Majda cannot win if Vašek plays optimally.
+
+Consequently, we have shown that the smallest winning number is $k = 1002$.
+
+\end{document}
+

@@ -1,0 +1,33 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dd}{\mathrm{d}}
+\renewcommand{\angle}{\sphericalangle}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{3}
+\problem{3} 
+
+\begin{document}
+
+Víme, že pro $n > 2$ platí po useknutí:
+
+\[
+  n - 2 + n + 2 - s(n) \equiv n \pmod{9}
+\]
+
+A pro $n > 11$ platí:
+
+\[
+  n + 2 - 11 \equiv n - 9 \equiv n \pmod{9}
+\]
+
+A tedy počet hlav modulo 9 se při useknutí nikdy nezmění. A protože $2 \equiv 11 \pmod{9}$, dokážeme zabít draka jen pokud $n \equiv 2 \pmod{9}$. Pro draka se 2 a 11 hlavami je postup zřejmý, pak pro každý větší $n$ budeme akorát usekávat 11 hlav, dokud jich drak nebude mít 11.
+
+\end{document}

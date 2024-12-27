@@ -271,12 +271,14 @@ std::vector<Token> lex(std::string source) {
 }
 
 int main() {
-  std::string source = "for (i = 0; i < n; i = i + 1)\nvar \x04";
+  std::string source =
+      "var a = 42 \nfor (i = 0; i < n; i = i + 1) \na = a + 1\n";
   std::vector<Token> ts = lex(source);
 
   for (auto t : ts) {
-    std::cout << token_type_to_str(t.type) << "(" << t.row << ", " << t.col
-              << ", " << t.value << ") ";
+    std::cout << token_type_to_str(t.type) << "(" <<
+        // t.row << ", " << t.col << ", " <<
+        t.value << ") ";
   }
   std::cout << '\n';
 }
