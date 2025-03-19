@@ -1,0 +1,23 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dd}{\mathrm{d}}
+\renewcommand{\angle}{\sphericalangle}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{4}
+\problem{D} 
+
+\begin{document}
+
+Víme, že graf tvořící komponentu souvislosti neobsahuje cyklus právě tehdy, když počet jeho hran je o jedna menší než počet jeho vrcholů (jedná se o vlastnost stromu). Proto tedy největší počet hran, který může mezi městy vést, je $n + m - 1$. Toto nastane tehdy, pokud všechna města tvoří jeden strom a tedy i jednu komponentu souvislosti. Je tedy zřejmé, že rozdělením na více komponent souvislosti se nevyplácí, protože by tím pro každý samostatný strom se snížil počet hran o jedna.
+
+Teď ukážu, jak můžeme takový graf sestrojit. Jako první si vybereme jakékoli město z Horních Uher (teda ze Slovenska samozřejmě) a ten pospojujeme se všemi městy Světa. Následně vezmeme jakékoli město ze Světa a spojíme ho se všemi městy Slovenska. Tehdy celý tento graf tvoří strom se $n + m - 1$ hrany.
+
+\end{document}

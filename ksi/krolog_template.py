@@ -79,12 +79,5 @@ def solve(facts: Facts, rules: Rules, questions: Facts) -> list[Solutions]:
 if __name__ == "__main__":
     file_name = "test.txt"
     f, r, q = parse(file_name)
-    # rule = Rule(Fact("matka", ['X', 'Y']), [Fact('zena', ['X']), Fact('rodic', ['X','Y'])])
-    # question = IndexedFact(Fact('matka', ['Z', 'Z']), 0)
-    # connect = Connection()
-    # connect.add_equal('Z0', 'cecil')
-    #
-    # print(apply_rule(rule, question, connect)[1].classes)
-
-    print(solve_problem(f, r, [IndexedFact(qu, i) for i, qu in enumerate(q)]))
+    print(solve(f, r, q))
 

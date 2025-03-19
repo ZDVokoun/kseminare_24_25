@@ -1,0 +1,261 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+
+\newcommand{\dd}{\mathrm{d}}
+\renewcommand{\angle}{\sphericalangle}
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{4}
+\problem{2} 
+
+\begin{document}
+
+\section{Úloha 1}
+
+Víme, že platí $\mathbf{I} = \mathbf{A} \mathbf{A}^{-1}$, a proto:
+
+\[
+  \det \mathbf{I} = \det (\mathbf{A} \mathbf{A}^{-1}) = \det \mathbf{A} \cdot \det \mathbf{A}^{-1} = 1
+\]
+
+Z toho konečně dostaneme:
+
+\[
+  \det \mathbf{A} = \frac{1}{\det \mathbf{A}^{-1}} = (\det \mathbf{A}^{-1})^{-1}
+\]
+
+\section{Úloha 2}
+
+Víme z minulých dílů seriálů, že pokud máme singulární matici, tak hledání inverzní matice pomocí Gaussovi-Jordanovi eliminace se nám jeden řádek vynuluje. Přesto ale napíšu krátké odvození, proč to platí:
+
+Pokud matice $\mathbf{A}$ je regulární, pak existuje matice $\mathbf{B}$ taková, že: 
+
+\[
+  \mathbf{I} = \mathbf{A} \mathbf{B} = \mathbf{B} \mathbf{A}
+\]
+
+Z toho jde taky ukázat, že $\mathbf{A}^{\top}$ je regulární (aplikuji vztah $(\mathbf{B} \mathbf{A})^{\top} = \mathbf{A}^{\top} \mathbf{B}^{\top}$, který lze přímo odvodit z definice maticového násobení):
+
+\[
+  \mathbf{I} = (\mathbf{B} \mathbf{A})^{\top} = \mathbf{A}^{\top} \mathbf{B}^{\top}
+\]
+
+Tudíž pokud je matice $\mathbf{A}$ singulární, pak nutně je i matice $\mathbf{A}^{\top}$ singulární, tedy jak sloupcové vektory, tak i řádkové vektory jsou lineárně závislé. Z toho tedy plyne, že jeden z řádků určitě půjde vynulovat.
+
+Když už víme toto, stačí si jen uvědomit, že jakmile vynásobíme jakýkoli vektor maticí, která má jeden z řádků nulový, jeden z jejich složek se nutně vynuluje. Tím pádem hyperobjem rovnoběžnostěnu určený jednotkovými vektory se vynuluje, protože jeden z jeho vektorů se vynuluje.
+
+
+\section{Úloha 3}
+
+Každou diagonální matici, která je regulární, lze rozložit na součin matic, kde vezmeme jednotkovou matici a jednu jedničku nahradíme číslem $\alpha \neq 0$. Díky tomu víme, že determinant této matice je rovnou součinu čísel na diagonále.
+
+U horní trojúhelníkové matice si nám stačí uvědomit, že úprava sečtení řádku k jinému nebude měnit velikost determinantu, protože matice této úpravy je vždy roven jedné. Proto když budeme postupně odčítat řádky matice tak, abychom získali diagonální matici, výsledný determinant bude roven takto získané diagonální matici.
+
+U dolní trojúhelníkové matice je to opravdu prakticky totožné -- místo toho, abychom odčítali řádky zdola nahoru, budeme odečítat shora dolů.
+
+\section{Úloha 4}
+
+Matice $\mathbf{A}$ odpovídá matici úpravy vynásobení řádku, a proto $\det \mathbf{A} = 7$. Matice $\mathbf{B}$ odpovídá matici přičtení násobku řádku, a proto $\det \mathbf{B} = 1$. A nakonec matice $\mathbf{C}$ odpovídá matici úpravy prohození posledního a třetího řádku, a proto $\det \mathbf{C} = -1$, protože prohazujeme řádky jen lišekrát.
+
+\section{Úloha 5}
+
+Nechť prvek matice $\mathbf{A}$ na pozici $i$, $j$ je $a_{i,j}$. Pak z definice determinantu platí, že:
+
+\[
+  \det \mathbf{A} = \sum_{\pi \in S_n} \sgn(\pi) \prod_{i = 1}^n a_{\pi(i), i}
+\]
+
+Protože v součinu s permutací projdeme všechny $i \in \{1, ..., n\}$, můžeme tento součin přepermutovat, a to inverzní permutací $\pi^{-1}$ (pro ni platí $\pi^{-1}(\pi(i)) = i$):
+
+\[
+  \det \mathbf{A} = \sum_{\pi \in S_n} \sgn(\pi) \prod_{i = 1}^n a_{\pi(i), i} = \sum_{\pi \in S_n} \sgn(\pi) \prod_{i = 1}^n a_{\pi^{-1}(\pi(i)), \pi^{-1}(i)} = \sum_{\pi \in S_n} \sgn(\pi) \prod_{i = 1}^n a_{i, \pi^{-1}(i)} 
+\]
+
+Teď je potřeba si jen rozmyslet, že $\sgn(\pi) = \sgn(\pi^{-1})$. Pokud permutace $\pi$ prohazuje sloupce lišekrát, pak i $\pi^{-1}$ musí prohodit sloupce lišekrát, abychom dostali identitu. Stejně tak i u permutací, které prohazují suděkrát. Z toho tedy dostáváme, že:
+
+\[
+  \det \mathbf{A} = \det \mathbf{A}^{\top} = d
+\]
+
+\section{Úloha 6}
+
+Matice $\mathbf{A}$ je:
+
+\[
+  \mathbf{A} = \begin{pmatrix}
+    0 & 1 \\
+    1 & 1 \\
+  \end{pmatrix}
+\]
+
+To si rychle ověříme:
+
+\[
+  \mathbf{A} \begin{pmatrix}
+    F_{i - 1} \\
+    F_{i}
+  \end{pmatrix} = \begin{pmatrix}
+    0 & 1 \\
+    1 & 1 \\
+  \end{pmatrix} \begin{pmatrix}
+    F_{i - 1} \\
+    F_{i}
+  \end{pmatrix} = \begin{pmatrix}
+    F_i \\ F_{i - 1} + F{i}
+  \end{pmatrix} = \begin{pmatrix}
+    F_i \\ F_{i + 1}
+  \end{pmatrix}
+\]
+
+Pro vlastní čísla a vlastní vektory platí:
+
+\[
+  (\mathbf{A} - \lambda \mathbf{I}) \mathbf{x} = \mathbf{0}
+\]
+
+A z toho:
+
+\[
+  \det (\mathbf{A} - \lambda \mathbf{I}) = 0
+\]
+\[
+  \begin{vmatrix}
+    (0 - \lambda) & 1 \\
+    1 & (1 - \lambda)
+  \end{vmatrix}  = 0
+\]
+\[
+  - \lambda \cdot (1 - \lambda) - 1 = 0
+\]
+\[
+  \lambda^2 - \lambda - 1 = 0
+\]
+\[
+  \lambda \in \left\{\frac{1 - \sqrt{5}}{2}, \frac{1 + \sqrt{5}}{2}\right\}
+\]
+
+Teď budeme postupně dosazovat vlastní čísla do rovnice $(\mathbf{A} - \lambda \mathbf{I}) \mathbf{x} = \mathbf{0}$, abychom našli příslušné vlastní vektory:
+
+\[
+  (\mathbf{A} - \lambda_1 \mathbf{I}) \mathbf{x_1} = \mathbf{0}
+\]
+\[
+  \begin{amatrix}{2}
+    \frac{\sqrt{5} - 1}{2} & 1 & 0 \\
+    1 & \frac{\sqrt{5} + 1}{2} & 0
+  \end{amatrix}
+\]
+\[
+  \begin{amatrix}{2}
+    \frac{\sqrt{5} - 1}{2} & 1 & 0 \\
+    \frac{\sqrt{5} - 1}{2} & \frac{\sqrt{5} + 1}{2} \cdot \frac{\sqrt{5} - 1}{2} & 0
+  \end{amatrix}
+\]
+\[
+  \begin{amatrix}{2}
+    \frac{\sqrt{5} - 1}{2} & 1 & 0 \\
+    0 & 0 & 0
+  \end{amatrix}
+\]
+\[
+  \mathbf{x_1} = t \begin{pmatrix}
+    - \frac{\sqrt{5} + 1}{2} \\ 1
+  \end{pmatrix}
+\]
+
+U druhého vlastního čísla je postup analogický:
+
+\[
+  (\mathbf{A} - \lambda_2 \mathbf{I}) \mathbf{x_2} = \mathbf{0}
+\]
+\[
+  \begin{amatrix}{2}
+    - \frac{1 + \sqrt{5}}{2} & 1 & 0 \\
+    1 & \frac{1 - \sqrt{5}}{2} & 0
+  \end{amatrix}
+\]
+\[
+  \begin{amatrix}{2}
+    - \frac{1 + \sqrt{5}}{2} & 1 & 0 \\
+    - \frac{1 + \sqrt{5}}{2} & - \frac{1 + \sqrt{5}}{2} \cdot \frac{1 - \sqrt{5}}{2} & 0
+  \end{amatrix}
+\]
+\[
+  \begin{amatrix}{2}
+    - \frac{1 + \sqrt{5}}{2} & 1 & 0 \\
+    0 & 0 & 0
+  \end{amatrix}
+\]
+\[
+  \mathbf{x_2} = t \begin{pmatrix}
+    \frac{\sqrt{5} - 1}{2} \\ 1
+  \end{pmatrix}
+\]
+
+Tedy pro $\mathbf{D}$ a $\mathbf{S}$ platí:
+
+\[
+  \mathbf{D} = \begin{pmatrix}
+    \frac{1 - \sqrt{5}}{2} & 0 \\
+    0 & \frac{1 + \sqrt{5}}{2}
+  \end{pmatrix}
+\]
+\[
+  \mathbf{S} = \begin{pmatrix}
+    - \frac{\sqrt{5} + 1}{2} & \frac{\sqrt{5} - 1}{2} \\
+    1 & 1
+  \end{pmatrix}
+\]
+\[
+  \mathbf{S}^{-1} = \left(\begin{array}{rr}
+-1 & -\frac{2}{\sqrt{5} + 1} \\
+1 & \frac{\sqrt{5} + 1}{2}
+\end{array}\right)
+\]
+
+Jde si ověřit, že tyto matice opravdu fungují. Dosazením dostaneme:
+
+\[
+  \mathbf{A}^i \cdot \begin{pmatrix}
+    0 \\ 1
+  \end{pmatrix} = \mathbf{S} \mathbf{D}^i \mathbf{S}^{-1} \cdot \begin{pmatrix}
+    0 \\ 1
+  \end{pmatrix} = \begin{pmatrix}
+    - \frac{\sqrt{5} + 1}{2} & \frac{\sqrt{5} - 1}{2} \\
+    1 & 1
+  \end{pmatrix} \cdot \begin{pmatrix}
+    \left(\frac{1 - \sqrt{5}}{2}\right)^i & 0 \\
+    0 & \left(\frac{1 + \sqrt{5}}{2}\right)^i
+  \end{pmatrix} \cdot \left(\begin{array}{rr}
+-1 & -\frac{2}{\sqrt{5} + 1} \\
+1 & \frac{\sqrt{5} + 1}{2}
+\end{array}\right) \cdot \begin{pmatrix}
+    0 \\ 1
+  \end{pmatrix}
+\]
+\[
+= \left(\begin{array}{r}
+  \frac{{\left(\frac{1 + \sqrt{5}}{2}\right)}^{i} - {\left(\frac{1 - \sqrt{5}}{2}\right)}^{i}}{\sqrt{5}} \\
+\frac{{\left(\frac{1}{2} \, \sqrt{5} + \frac{1}{2}\right)}^{i} {\left(3 \, \sqrt{5} + 5\right)} + 2 \, \sqrt{5} {\left(-\frac{1}{2} \, \sqrt{5} + \frac{1}{2}\right)}^{i}}{5 \, {\left(\sqrt{5} + 1\right)}}
+\end{array}\right)
+\]
+
+Výsledek je tedy:
+
+\[
+  F_i = \frac{{\left(\frac{1 + \sqrt{5}}{2}\right)}^{i} - {\left(\frac{1 - \sqrt{5}}{2}\right)}^{i}}{\sqrt{5}}
+\]
+
+\end{document}

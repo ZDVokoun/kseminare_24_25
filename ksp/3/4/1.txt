@@ -1,0 +1,7 @@
+d0: in0 in1 0
+d1: in2 in3 0
+d2: in4 in5 0
+d3: in6 in7 0
+d4: d0 d1 0
+d5: d2 d3 0
+result: d4 d5 0

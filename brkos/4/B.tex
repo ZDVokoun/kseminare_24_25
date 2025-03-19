@@ -1,0 +1,52 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dd}{\mathrm{d}}
+\renewcommand{\angle}{\sphericalangle}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{4}
+\problem{B} 
+
+\begin{document}
+
+  Indukcí dokážu, že pro každé $k \in \mathbb{Z}_{0}^{+}$ je $P_{2k} = 0$ a $P_{2k + 1} = -F_{2k + 2}$, tedy pro sudá $n$ je $P_n = 0$ a pro lichá~$n$ je $P_n = -F_{n + 1}$.
+
+Jako první vypíšu první čtyři čísla:
+
+\[
+  P_0 = 0
+\]
+\[
+  P_1 = -1
+\]
+\[
+  P_2 = -1 + 0 + 1 = 0
+\]
+\[
+  P_3 = 0 -1 - 2 = -3
+\]
+
+Můžeme tedy vidět, že pro tato čísla to opravdu platí. Můžeme se tedy pustit do důkazu pro všechna $n$.
+
+Pro $n = 2k + 1$ podle indukčního předpokladu platí, že:
+
+\[
+  P_{2k + 1} = P_{2k} + P_{2k - 1} + (-1)^{2k + 1} F_{2k + 1} = 0 - F_{2k} - F_{2k + 1} = - F_{2k + 2}
+\]
+
+A pro $n = 2k + 2$ podle indukčního předpokladu platí, že:
+
+\[
+  P_{2k + 2} = P_{2k + 1} + P_{2k} + (-1)^{2k + 2} F_{2k + 2} = - F_{2k + 2} + 0 + F_{2k + 2} = 0
+\]
+
+Důkaz indukcí je tím u konce. Q. E. D.
+
+\end{document}

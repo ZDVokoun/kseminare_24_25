@@ -1,0 +1,55 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dd}{\mathrm{d}}
+\renewcommand{\angle}{\sphericalangle}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{6}
+\problem{A} 
+
+\begin{document}
+
+Jako první dokážu, že když platí $abc = 1$, tak je trojice záhadná. Tehdy cyklicky platí, že $a^2 = \frac{1}{b^2}{c^2}$, což když dosadíme, dostaneme:
+
+\[
+  \sqrt{a^2 + \frac{1}{a^2 c^2} + 2ab} + \sqrt{b^2 + \frac{1}{b^2 a^2} + 2bc} + \sqrt{c^2 + \frac{1}{c^2 b^2} + 2ca} =
+\]
+\[
+  = \sqrt{a^2 + b^2 + 2ab} + \sqrt{b^2 + c^2 + 2bc} + \sqrt{c^2 + a^2 + 2ca} = a + b + b + c + c + a = 2(a + b + c)
+\]
+
+Teď sporem dokážu, trojice je záhadná právě tehdy, když $abc = 1$. Předpokládejme tedy BÚNO, že $abc < 1$. Protože čísla $a,b,c$ jsou kladná čísla a kvadratická funkce a odmocnina jsou v kladných číslech definovány a rostoucí, platí:
+
+\[
+  a < \frac{1}{bc}
+\]
+\[
+  c^2 + a^2 + 2ca < c^2 + \frac{1}{c^2 b^2} + 2ca
+\]
+\[
+  \sqrt{c^2 + a^2 + 2ca} < \sqrt{c^2 + \frac{1}{c^2 b^2} + 2ca}
+\]
+
+Analogicky pak můžeme získat zbývající dvě nerovnosti, které když sečteme, dostaneme:
+
+\[
+  \sqrt{a^2 + \frac{1}{a^2 c^2} + 2ab} + \sqrt{b^2 + \frac{1}{b^2 a^2} + 2bc} + \sqrt{c^2 + \frac{1}{c^2 b^2} + 2ca} >
+\]
+
+\[
+  > \sqrt{a^2 + b^2 + 2ab} + \sqrt{b^2 + c^2 + 2bc} + \sqrt{c^2 + a^2 + 2ca} = 2(a + b + c)
+\]
+
+Vidíme tedy, že rovnost ze zadání v tomto případě nikdy nemůže platit.
+
+Protože v případě $abc > 1$ je postup podobný, dokázali jsme, že trojice je záhadná právě tehdy, když $abc = 1$. A protože $abc = cba = 1$, trojice $(c,b,a)$ je taky záhadná, což jsme chtěli dokázat.
+
+
+\end{document}

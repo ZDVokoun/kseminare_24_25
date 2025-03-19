@@ -1,0 +1,120 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dd}{\mathrm{d}}
+\renewcommand{\angle}{\sphericalangle}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{4}
+\problem{C} 
+
+\begin{document}
+
+Jako první odečteme od druhé rovnice první a od čtvrté rovnice třetí, čímž dostaneme:
+
+\[
+  y^2 + z^2 + xw - x^2 - y ^2 - zw = a
+\]
+\[
+  z^2 + w^2 + xy - w^2 - x^2 - yz = a
+\]
+
+A z toho:
+
+\[
+  y^2 + z^2 + xw - x^2 - y ^2 - zw = z^2 + w^2 + xy - w^2 - x^2 - yz
+\]
+\[
+  xw - zw = xy - yz
+\]
+\[
+  (x - z) w = (x - z) y
+\]
+
+Tedy buď $x = z$ nebo $y = w$. Pokud nastane první případ, pak dostaneme rovnice:
+
+\[
+  x^2 + y^2 + xw = a
+\]
+\[
+  x^2 + y^2 + xw = 2a
+\]
+\[
+  x^2 + w^2 + xy = 3a
+\]
+\[
+  x^2 + w^2 + xy = 4a
+\]
+
+Tedy by soustava měla řešení jen pro $a = 0$.
+
+Pro druhý případ je to analogický:
+
+\[
+  x^2 + y^2 + yz = a
+\]
+\[
+  y^2 + z^2 + xy = 2a
+\]
+\[
+  x^2 + y^2 + yz = 3a
+\]
+\[
+  y^2 + z^2 + xy = 4a
+\]
+
+A tedy soustava má řešení jen pro $a = 0$.
+
+Tedy víme, že pro $a \neq 0$ nemá soustava řešení. Pro $a = 0$ dostaneme cyklickou soustavu rovnic, a tudíž můžeme BÚNO předpokládat, že $x = z$. Pak dostaneme rovnice:
+
+\[
+  x^2 + y^2 + xw = 0
+\]
+\[
+  x^2 + w^2 + xy = 0
+\]
+
+Jejich rozdíl nám dává:
+
+\[
+  y^2 - w^2 + xw - xy = 0
+\]
+\[
+  (y - w)(y + w) = x(y - w)
+\]
+
+Tedy buď $y = w$ nebo $x = y + w$. V prvním případě dostaneme rovnici:
+
+\[
+  x^2 + y^2 + xy = 0
+\]
+\[
+  x^2 + xy + \frac{1}{4} y^2 + \frac{3}{4} y^2 = 0
+\]
+\[
+  \left(x + \frac{1}{2} y\right)^2 + \frac{3}{4} y^2 = 0
+\]
+
+A tedy v tomto případě $x = y = z = w = 0$. V druhém případě dostaneme:
+
+\[
+  (y + w)^2 + y^2 + w^2 + yw = 0
+\]
+\[
+  2y^2 + 3wy + 2w^2 = 0
+\]
+\[
+  \left(\sqrt{2} y + \frac{3 \sqrt{2}}{4} w\right)^2 + \frac{7}{8} w^2 = 0
+\]
+
+  Kde řešení je totožné, tedy pro $a = 0$ známe jen jediné řešení, a to $x = y = z = w= 0$.
+
+
+
+\end{document}
