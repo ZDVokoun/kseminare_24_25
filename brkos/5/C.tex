@@ -1,0 +1,62 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\angle}{\sphericalangle}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{5}
+\problem{C} 
+
+\begin{document}
+
+Jsou tři případy, kdy Járo Švrkošík získá přesně 16 bodů:
+
+\begin{enumerate}
+  \item Zvolí 8 správných odpovědí a 8 špatných
+  \item Zvolí 7 správných, 5 špatných a 4 neplatných
+  \item Zvolí 6 správných, 2 špatných a 8 neplatných
+\end{enumerate}
+
+První případ je snadný -- vybereme osm otázek ze šestnácti, který odpovíme správně, a u zbytku máme u otázky na výběr ze tří špatných odpovědí, proto počet kombinací v tomto případě je:
+
+\[
+  \binom{16}{8} \cdot 1^8 \cdot \binom{8}{8} \cdot 3^8
+\]
+
+V druhém případě provedeme podobný postup, jen musíme rozebrat případy, kdy se otázky zneplatní. V tomto případě se otázky zneplatní, když u dvou otázek zvolíme dvě odpovědi nebo když u jedné otázky zaškrtneme všechno. To odpovídá výrazu:
+
+\[
+  \binom{16}{7} \cdot 1^7 \cdot \binom{9}{5} \cdot 3^5 \cdot \left( \binom{4}{2} \cdot \binom{4}{2}^2 + \binom{4}{1} \cdot \binom{4}{4} \right)
+\]
+
+V třetím případě se zneplatňování odpovědí zesložití. Buď vše zaškrtáme u dvou odpovědí, u třech odpovědí vždy vybereme alespoň dvě odpovědi, nebo u čtyřech odpovědí zvolíme dvě odpovědi:
+
+\[
+  \binom{16}{6} \cdot 1^6 \cdot \binom{10}{2} \cdot 3^2 \cdot \left( \binom{8}{2} \cdot \binom{4}{4}^2 + \binom{8}{3} \cdot \binom{4}{2}^3 \cdot \binom{6}{2} + \binom{8}{4} \cdot \binom{4}{2}^4 \right)
+\]
+
+A protože celkový počet kombinací je $\binom{64}{16}$, celková pravděpodobnost je:
+
+\[
+  p = \frac{1}{\binom{64}{16}} \cdot \left(
+    \binom{16}{8} \cdot 3^8 + 
+    \binom{16}{7} \cdot \binom{9}{5} \cdot 3^5 \cdot \left(\binom{4}{2}^3 + 4 \right) +  \
+    \binom{16}{6} \cdot \binom{10}{2} \cdot 3^2 \cdot \left( \binom{8}{2} + \binom{8}{3} \cdot \binom{4}{2}^3 \cdot \binom{6}{2} + \binom{8}{4} \cdot \binom{4}{2}^4 \right)
+  \right)
+\]
+\[
+  = \frac{10665720351}{5428077078662} \doteq 0{,}196492 \%
+\]
+
+\end{document}

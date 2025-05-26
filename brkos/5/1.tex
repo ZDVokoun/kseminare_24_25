@@ -1,0 +1,57 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dd}{\mathrm{d}}
+\renewcommand{\angle}{\sphericalangle}
+\newcommand{\N}{\mathbb{N}}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{5}
+\problem{1} 
+
+\begin{document}
+
+Budu se dívat jen na podmnožinu polynomů, které jde z těchto čísel složit, a to na $x^2 + b x + c$. Kořeny tohoto polynomu jsou:
+
+\[
+  x = \frac{-b \pm \sqrt{b^2 - 4c}}{2}
+\]
+
+Tedy dostaneme reálný kořen právě tehdy, když:
+
+\[
+  b^2 > 4c
+\]
+
+Teď si zavedu proměnné $x$ a $y$, kde $x = \max(a,b)$ a $y = \min(a,b)$. Nutně platí, že $y \geq 2$ a že $x \geq y + 1$.
+
+Teď chci dokázat následující nerovnost:
+
+\[
+  (y + 1)^2 > 4y
+\]
+\[
+  y^2 + 2y + 1 > 4y
+\]
+\[
+  y^2 - 2y + 1 > 0
+\]
+\[
+  (y - 1)^2 > 0
+\]
+
+Tato nerovnost díky podmínce $y \geq 2$ nutně platí. A protože pracujeme v přirozených číslech, kvadratická funkce je rostoucí a platí:
+
+\[
+  x^2 \geq (y + 1)^2 > 4y
+\]
+
+Tedy když přepermutujeme koeficienty tak, aby $b = x$ a $c = y$, dostaneme polynom, který chceme.
+
+\end{document}

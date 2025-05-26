@@ -1,0 +1,51 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\angle}{\sphericalangle}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{5}
+\problem{A} 
+
+\begin{document}
+
+Pro pohodlí budu počítat s úhlem $\alpha$ zadaný v radiánech.
+
+Délku oblouku menšího z kružnic vypočítáme takto:
+
+\[
+  a = 2 \pi r_1 - \alpha r_1
+\]
+
+Délku oblouku většího z kružnic získáme takto:
+
+\[
+  a = \alpha (r_1 + a)
+\]
+
+Protože oba tyto oblouky jsou stejně dlouhé, spojením rovnou dostaneme rovnici, která určí hledaný poměr:
+
+\[
+  2 \pi r_1 - \alpha r_1 = \alpha (r_1 + a)
+\]
+\[
+  2 \pi r_1 - 2 \alpha r_1 = \alpha a
+\]
+\[
+  \frac{a}{r_1} = 2 \frac{\pi - \alpha}{\alpha} = \frac{2 \pi}{\alpha} - 2
+\]
+
+To je tedy ten hledaný poměr.
+
+\end{document}

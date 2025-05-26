@@ -1,0 +1,54 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dd}{\mathrm{d}}
+\renewcommand{\angle}{\sphericalangle}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{5}
+\problem{3} 
+
+\begin{document}
+
+Víme tedy, že tento polynom můžeme vyjádřit jako:
+
+\[
+  x^6 + b x^5 + c x^4 - c x^2 - b x - 1
+\]
+
+Můžeme si ale všimnout, že tento polynom má kořeny 1, $-1$, proto lze tento polynom rozložit na:
+
+\[
+  {\left(x^{4} + b x^{3} + (c + 1) x^{2} + b x + 1\right)} {\left(x + 1\right)} {\left(x - 1\right)}
+\]
+
+Tudíž jsme dostali další reciproký polynom, ale čtvrtého stupně. Nechť je tento nový polynom $Q(x)$. Zároveň pokud by kořen $Q(x)$ byla 1, musela by zároveň i $-1$ být kořenem $Q(x)$, aby se zachovala parita reciprokých kořenů, a naopak. Tehdy ale součet dvojnásobných kořenů by byl 0, tím pádem ani 1, ani $-1$, nemohou být dvojnásobnými kořeny. Tedy $Q(x)$ má oba dvojnásobné kořeny, které má zadaný polynom, tím pádem těmi dvojnásobnými kořeny musí být čísla $a$, $1/a$ pro nějaké $a$, které můžeme snadno najít:
+
+\[
+  a + \frac{1}{a} = -4
+\]
+\[
+  a^2 + 1 = -4a
+\]
+\[
+  a^2 + 4a + 1 = 0
+\]
+\[
+  a = \pm \sqrt{3} - 2
+\]
+
+Obě řešení $a$ jsou si navzájem reciproké, tedy hledaný polynom umíme vyjádřit jako:
+
+\[
+  (x - (- \sqrt{3} - 2))^2 (x - (\sqrt{3} - 2))^2 (x + 1) (x - 1) = x^{6} + 8 \, x^{5} + 17 \, x^{4} - 17 \, x^{2} - 8 \, x - 1
+\]
+
+Tento polynom splňuje všechny podmínky ze zadání, tedy se jedná opravdu o něj. Našli jsme tedy hledaný polynom.
+
+\end{document}

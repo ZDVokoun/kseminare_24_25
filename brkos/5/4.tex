@@ -1,0 +1,40 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\N}{\mathbb{N}}
+\renewcommand{\angle}{\sphericalangle}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{5}
+\problem{4} 
+
+\begin{document}
+
+\section{Na nulový polynom}
+
+Jako první se podíváme na polynom prvního stupně, a to na $- x - 1$. Můžeme si všimnout toho, že tento polynom má kořen $-1$ a všechny jeho koeficienty jsou $-1$, tedy se zobrazí na nulový polynom. 
+
+Teď ukážu, že abychom dostali takový polynom, ale vyššího stupně, stačí nám vynásobit tento polynom nějakou mocninou $x^n$. Protože kořeny polynomu $x^n (-x - 1) = -x^{n + 1} - x^n$ jsou vždy čísla 0 a $-1$ a taky tento polynom nemá jiné koeficienty kromě těchto dvou, ukázali jsme, že polynom, který se zobrazí na nulový polynom, existuje pro všechny stupně.
+
+\section{Sám na sebe}
+
+Víme, že pro všechna $n \in \N$ platí, že $1^n = 1$ a $0^n = 0$. A protože polynom $x^n$ má jen koeficienty 0 a 1, musí se nutně zobrazit sám na sebe.
+
+\section{$k$-násobek}
+
+Ukáži, že všechny polynomy ve tvaru $\sqrt[n]{k} x^n$ se převedou na $k$-násobek původního polynomu:
+
+\[
+  F(\sqrt[n]{k} x^n) = \left(\sqrt[n]{k} \left(\sqrt[n]{k}\right)^n\right) x^n = k \cdot \sqrt[n]{k} x^n
+\]
+
+Tento polynom existuje pro každý stupeň, proto tedy pro každý stupeň existuje polynom, které se zobrazí na jakýkoli přirozený násobek.
+
+\end{document}

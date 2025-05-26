@@ -1,0 +1,70 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\angle}{\sphericalangle}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{5}
+\problem{2} 
+
+\begin{document}
+
+\section{Úloha 1}
+
+Pro pozitivně definitní matici $\mathbf{A}$ platí $\mathbf{u}^{\top} \mathbf{A u} > 0$. Protože $\mathbf{u}^{\top} \mathbf{L L}^{\top} \mathbf{u} = (\mathbf{L}^{\top} \mathbf{u})^{\top} \mathbf{L}^{\top} \mathbf{u}$, označme $\mathbf{v} = \mathbf{L}^{\top} \mathbf{u}$. Pak víme, že:
+
+\[
+  \mathbf{v}^{\top} \mathbf{v} = v_1^2 + v_2^2 + \dots + v_n^2
+\]
+
+Tento výraz je nutně kladný pro všechny nenulové vektory a je nulový právě jen pro nulový vektor, tedy $\mathbf{L L}^{\top}$ je opravdu pozitivně definitní.
+
+
+\section{Úloha 3}
+
+Víme, že $\langle \mathbf{u} \vert \mathbf{u} \rangle \geq 0$. Z toho nutně vyplývá, že $\sqrt{\langle \mathbf{u} \vert \mathbf{u} \rangle} = \| \mathbf{u} \| \geq 0$, jelikož druhá odmocnina je rostoucí funkce v nezáporných reálných číslech.
+
+U druhého axiomu postupně upravíme výraz $\| \alpha \mathbf{u} \|$, čímž ho dokážeme:
+
+\[
+  \| \alpha \mathbf{u} \| = \sqrt{\langle \alpha \mathbf{u} \vert \alpha \mathbf{u} \rangle} = \sqrt{\alpha \langle \mathbf{u} \vert \alpha \mathbf{u} \rangle} =  \sqrt{\alpha^2 \langle \mathbf{u} \vert  \mathbf{u} \rangle} = \alpha \sqrt{\langle \mathbf{u} \vert  \mathbf{u} \rangle} = |\alpha| \cdot \| \mathbf{u} \|
+\]
+
+U třetího axiomu nejprve umocníme obě strany, což můžeme, protože obě strany jsou kladné. Postupně pak upravíme do tvaru, který zjevně platí:
+
+\[
+  \| \mathbf{u} + \mathbf{v} \|^2 \leq (\| \mathbf{u} \| + \| \mathbf{v} \|)^2
+\]
+\[
+  \langle \mathbf{u} + \mathbf{v} \vert \mathbf{u} + \mathbf{v} \rangle \leq \| \mathbf{u} \|^2 + 2 \| \mathbf{u} \| \| \mathbf{v} \| + \| \mathbf{v} \|^2
+\]
+\[
+  \langle \mathbf{u} \vert \mathbf{u} + \mathbf{v} \rangle + \langle \mathbf{v} \vert \mathbf{u} + \mathbf{v} \rangle \leq  \| \mathbf{u} \|^2 + 2 \| \mathbf{u} \| \| \mathbf{v} \| + \| \mathbf{v} \|^2 
+\]
+\[
+  \langle \mathbf{u} \vert \mathbf{u} \rangle + 2 \langle \mathbf{u} \vert \mathbf{v} \rangle + \langle \mathbf{v} \vert \mathbf{v} \rangle \leq  \| \mathbf{u} \|^2 + 2 \| \mathbf{u} \| \| \mathbf{v} \| + \| \mathbf{v} \|^2 
+\]
+\[
+   \| \mathbf{u} \|^2 + 2 \| \mathbf{u} \| \| \mathbf{v} \| \cos \phi +\| \mathbf{v} \|^2 \leq  \| \mathbf{u} \|^2 + 2 \| \mathbf{u} \| \| \mathbf{v} \| + \| \mathbf{v} \|^2 
+\]
+\[
+   2 \| \mathbf{u} \| \| \mathbf{v} \| \cos \phi \leq 2 \| \mathbf{u} \| \| \mathbf{v} \| 
+\]
+\[
+   \cos \phi \leq 1 
+\]
+
+Toto zřejmě platí z definice kosinu, čímž jsme dokázali platnost třetího axiomu pro normu indukovanou skalárním součinem.
+
+\end{document}
